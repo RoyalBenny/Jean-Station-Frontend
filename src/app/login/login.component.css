@@ -1,0 +1,17 @@
+.logo{
+    width: 100px;
+    height: 80px;
+    ;
+}
+
+.logo-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    align-items: center;
+    justify-content: center;
+}
