@@ -8,6 +8,7 @@ import { SigninComponent } from './signin/signin.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ProductShowComponent } from './product-show/product-show.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     SigninComponent,
     HeaderComponent,
     FooterComponent,
-    HomePageComponent
+    HomePageComponent,
+    ProductShowComponent
   ],
   imports: [
     BrowserModule,

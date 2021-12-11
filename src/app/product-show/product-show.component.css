@@ -1,0 +1,22 @@
+.head{
+    height:10vh;
+    width:100vw;
+    background-color: orangered;
+}
+img{
+    padding-top:2vh ;
+    height: 350px;
+    width:350px ;
+}
+.Product{
+    display:flex;
+
+}
+.Detail{
+    padding-left:25px; 
+   
+}
+h3{
+    color: green;  
+}
+
