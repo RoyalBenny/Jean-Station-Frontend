@@ -1,0 +1,39 @@
+body{margin: auto;}
+.Heading{
+    align-items: center;
+    align-content: center;
+    margin: auto;
+}
+.product-image{
+    align-items: center;
+    align-content: center;
+    margin-left: 50px;
+    display: inline;
+}
+.product-title{
+    align-items: center;
+    align-content: center;
+    margin-left: 50px;
+    display: inline;
+}
+.product-quantity{
+    align-items: center;
+    align-content: center;
+    margin-left: 50px;
+    display: inline;
+    
+}
+.product-price{
+    align-items: center;
+    align-content: center;
+    margin-left: 50px;
+    display: block;
+}
+.product-totprice{
+    align-items: center;
+    align-content: center;
+    margin-left: 50px;
+    display: inline;
+    
+    
+}
