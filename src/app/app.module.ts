@@ -12,6 +12,9 @@ import { OrderDeliveryComponent } from './order-delivery/order-delivery.componen
 =======
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
+<<<<<<< HEAD
+import { ProductShowComponent } from './product-show/product-show.component';
+=======
 import { CartComponent } from './cart/cart.component';
 >>>>>>> 0c378c9501af76ee707798862079c01f19c6a782
 
@@ -27,6 +30,9 @@ import { CartComponent } from './cart/cart.component';
 =======
     FooterComponent,
     HomePageComponent,
+<<<<<<< HEAD
+    ProductShowComponent
+=======
     CartComponent
 >>>>>>> 0c378c9501af76ee707798862079c01f19c6a782
   ],
