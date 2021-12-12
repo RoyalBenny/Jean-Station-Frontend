@@ -1,0 +1,35 @@
+.heading{
+    background:orangered;
+    height:50px;
+    width:auto;
+    display:flex;
+   
+}
+.order-status{
+    margin: 80px auto;
+}
+table{
+    width:100%;
+    border-collapse: collapse;
+    
+}
+.product-info{
+    display:flex;
+    
+}
+th{
+    text-align:left; 
+    font-weight: normal;
+    color:white;
+    background:orangered;
+}
+img{
+    width:80px;
+    height:80px;
+}
+td{
+    padding:10px 5px
+}
+.dropdown{
+    align-items: left;
+}
