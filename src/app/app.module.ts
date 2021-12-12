@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { HeaderComponent } from './header/header.component';
-
 import { ItemListComponent } from './item-list/item-list.component';
 import { OrderDeliveryComponent } from './order-delivery/order-delivery.component';
+
 
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -32,7 +32,11 @@ import { CartComponent } from './cart/cart.component';
 
     ProductShowComponent,
 
-    CartComponent
+    CartComponent,
+
+    FooterComponent,
+    HomePageComponent,
+    ProductShowComponent,
 
   ],
   imports: [
