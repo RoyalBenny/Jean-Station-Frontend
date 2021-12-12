@@ -1,5 +1,5 @@
 <div class="heading" style="color:white; background-color: orangered;height:70px">
-    <h1>Item Collections </h1>
+    <h1>{{category}}</h1>
 </div>
 <div class="container item-list">
     <div class="dropdown">
@@ -21,8 +21,8 @@
           </div>
       </div>
     <div class="row">
-        <div class="col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
+        <div class="col-4" (click)="onItem('1')">     
+        <img src="..//..//assets/img/jeans.jpg" alt="jeans">
         <div class="cc">
         <h4>Jeans</h4>
         <h4>$1500</h4>

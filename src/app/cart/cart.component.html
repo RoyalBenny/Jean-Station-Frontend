@@ -11,18 +11,29 @@
 <div class="container">
   <div class="row">
     <div class="image col-12 col-md-4 d-flex justify-content-center">
+<<<<<<< HEAD
       <img src="{{item.image}}">
+=======
+      <img src="../../assets/img/jens.jpg" alt="jeans img">
+>>>>>>> 7837e8ba4be8d33e22a4acf787591406173fe04a
     </div>
     <div class="col-12 col-md-8 d-flex align-items-center">
       <div class="col-4">
      <div class="product-title">{{item.name}}</div>
      <div class="product-price">{{item.price}}</div>
        <div class="quantity">Quantity:</div>
+<<<<<<< HEAD
      <input type="number" value="{item.quantity}}" min="1">
      <div class="product-totprice">Total:</div>
      <div class="product-totprice">{{item.totals}}</div>
         <button (click)="RemoveItem(item)" class=" btn btn-danger">Remove</button>
         <button (click)="Emptycart()"class="btn btn-danger">Empty Cart</button>
+=======
+     <input type="number" value="2" min="1">
+        <button class=" btn btn-danger">Remove</button>
+        <button class=" btn btn-warning" (click)="onBuy('1')">Place Order</button>
+
+>>>>>>> 7837e8ba4be8d33e22a4acf787591406173fe04a
        <br>
     </div>
   </div>
