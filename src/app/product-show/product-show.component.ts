@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../Product';
+import { Products } from '../Product'
+import { ProductService } from '../services/product.service';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-product-show',
   templateUrl: './product-show.component.html',
   styleUrls: ['./product-show.component.css']
 })
 export class ProductShowComponent implements OnInit {
-
-  constructor() { }
+products:Array<Products>=[];
+  constructor(private ps:ProductService) {
+    this.ps.getProducts().subscribe((data)=>{this.products=data;});
+   }
 
   ngOnInit(): void {
   }

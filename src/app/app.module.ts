@@ -10,8 +10,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductShowComponent } from './product-show/product-show.component';
+import { HttpClientModule } from '@angular/common/http';
 
-
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +22,13 @@ import { ProductShowComponent } from './product-show/product-show.component';
 
     FooterComponent,
     HomePageComponent,
-    ProductShowComponent,
+    ProductShowComponent
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

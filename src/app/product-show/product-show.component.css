@@ -6,23 +6,17 @@
 }
 img{
     padding-top:2vh ;
-    height: 75vh;
+    height: 65vh;
     width:350px ;
 }
-.Product{
+.Product-show{
     margin: auto;
     display:flex;
 
 }
 .Detail{
     padding-left:25px; 
-    
+    display: inline;
    
 }
 
-.item-show{
-    margin: 0%;
-    /*display: flex;*/
-    flex-wrap: wrap;
-    width:100vw;
-}
