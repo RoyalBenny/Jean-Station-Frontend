@@ -1,4 +1,4 @@
-export interface Product {
+export class Product {
     
     name?: string;
     price?: number;
@@ -6,6 +6,7 @@ export interface Product {
     quantity?: number;
     description?:string;
     image?: string;
+
   }
   
   
