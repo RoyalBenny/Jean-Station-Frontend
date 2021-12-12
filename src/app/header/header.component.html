@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" (click)="onHome()">
           <img src="../../assets/img/logo.png" alt="" width="50px">
           Jean Station
       </a>
@@ -14,10 +14,10 @@
                   Men
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Pants</a></li>
-                  <li><a class="dropdown-item" href="#">T-shirts</a></li>
-                  <li><a class="dropdown-item" href="#">Shirts</a></li>
-                  <li><a class="dropdown-item" href="#">Shoes</a></li>
+                  <li><a class="dropdown-item" (click)= "onDropdown('men','pants')">Pants</a></li>
+                  <li><a class="dropdown-item" (click)= "onDropdown('men','tshirts')">T-shirts</a></li>
+                  <li><a class="dropdown-item" (click)= "onDropdown('men','shirts')">Shirts</a></li>
+                  <li><a class="dropdown-item" (click)= "onDropdown('men','shoes')">Shoes</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
@@ -25,52 +25,52 @@
                     Women 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Pants</a></li>
-                    <li><a class="dropdown-item" href="#">T-shirts</a></li>
-                    <li><a class="dropdown-item" href="#">Blouses</a></li>
-                    <li><a class="dropdown-item" href="#">Shoes</a></li>
+                    <li><a class="dropdown-item" (click)= "onDropdown('women','pants')">Pants</a></li>
+                    <li><a class="dropdown-item" (click)= "onDropdown('women','tshirts')">T-shirts</a></li>
+                    <li><a class="dropdown-item" (click)= "onDropdown('women','blouses')">Blouses</a></li>
+                    <li><a class="dropdown-item" (click)= "onDropdown('women','shoes')">Shoes</a></li>
                   </ul>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="boyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle"  id="boyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Boy
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Pants</a></li>
-                  <li><a class="dropdown-item" href="#">T-shirts</a></li>
-                  <li><a class="dropdown-item" href="#">Shirts</a></li>
-                  <li><a class="dropdown-item" href="#">Shoes</a></li>
+                  <li><a class="dropdown-item" (click)= "onDropdown('boy','pants')">Pants</a></li>
+                  <li><a class="dropdown-item" (click)= "onDropdown('boy','tshirts')">T-shirts</a></li>
+                  <li><a class="dropdown-item" (click)= "onDropdown('boy','shirts')">Shirts</a></li>
+                  <li><a class="dropdown-item" (click)= "onDropdown('boy','shoes')">Shoes</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown" >
-                <a class="nav-link dropdown-toggle" href="#" id="girlDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle"  id="girlDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Girl 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Pants</a></li>
-                    <li><a class="dropdown-item" href="#">T-shirts</a></li>
-                    <li><a class="dropdown-item" href="#">Blouses</a></li>
-                    <li><a class="dropdown-item" href="#">Shoes</a></li>
+                    <li><a class="dropdown-item" (click)= "onDropdown('girl','pants')">Pants</a></li>
+                    <li><a class="dropdown-item" (click)= "onDropdown('girl','tshirts')">T-shirts</a></li>
+                    <li><a class="dropdown-item" (click)= "onDropdown('girl','blouses')">Blouses</a></li>
+                    <li><a class="dropdown-item" (click)= "onDropdown('girl','shoes')">Shoes</a></li>
                   </ul>
             </li> 
         </ul>
         <ul class="navbar-nav">   
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <!-- <li class="nav-item">
+            <a class="nav-link" (click) = "onProfile()">
               
               My Profile
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" (click) = "onOrder()">
               My Orders
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">My Cart</a>
+            <a class="nav-link" (click) = "onCart()" >My Cart</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sign Out</a>
+            <a class="nav-link" (click) = "onLogin()">Sign Out</a>
           </li>
         </ul>
       </div>

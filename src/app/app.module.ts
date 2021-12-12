@@ -6,14 +6,24 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { HeaderComponent } from './header/header.component';
-<<<<<<< HEAD
 import { ItemListComponent } from './item-list/item-list.component';
 import { OrderDeliveryComponent } from './order-delivery/order-delivery.component';
-=======
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductShowComponent } from './product-show/product-show.component';
+import { CartComponent } from './cart/cart.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const appRoutes: Routes = [
+  { path: '', component: HomePageComponent },
+  { path: 'home', component: HomePageComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'item-list/:value', component: ItemListComponent},
+  { path: 'order-delivery', component: OrderDeliveryComponent },
+  { path: 'product-show', component: ProductShowComponent },
+  { path: 'cart', component: CartComponent },
+];
 
 @NgModule({
   declarations: [
@@ -21,20 +31,21 @@ import { ProductShowComponent } from './product-show/product-show.component';
     LoginComponent,
     SigninComponent,
     HeaderComponent,
-<<<<<<< HEAD
     ItemListComponent,
-    OrderDeliveryComponent
-=======
+    OrderDeliveryComponent,
     FooterComponent,
     HomePageComponent,
     ProductShowComponent,
-
+    CartComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
+
+
