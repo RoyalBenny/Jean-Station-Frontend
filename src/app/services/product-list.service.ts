@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../Product';
+import { Product } from '../models/product';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -20,6 +20,5 @@ subject:BehaviorSubject<Array<Product>> =  new BehaviorSubject(this.products)
    getProducts():Observable<Array<Product>>
   {
     return this.subject;
-    
   }
 }

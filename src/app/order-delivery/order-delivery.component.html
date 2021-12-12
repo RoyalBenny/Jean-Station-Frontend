@@ -27,17 +27,10 @@
             <th>Date</th>
         </tr>
         <tr *ngFor="let i of products">
-            <td>
-                <div class= "product-info">
-                    <img src="{{i.img}}">
-                    <div>
-                        <p>{{i.name}}</p>
-                        <p>{{i.price}}</p>
-                    </div>
-                </div>
-            </td>
-            <td>Delivered</td>
-            <td>20th october 2019</td>
+            <td><p>{{i.address}}</p></td>
+            <td><p>{{i.price}}</p></td>
+            <td><p>{{i.date}}</p></td>
+            <td><p>{{i.status}}</p></td>
         </tr>
       </table>
 </div>
