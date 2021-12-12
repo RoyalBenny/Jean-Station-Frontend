@@ -1,39 +1,57 @@
-body{margin: auto;}
-.Heading{
-    align-items: center;
-    align-content: center;
-    margin: auto;
+header{
+    background-color: cadetblue;
 }
-.product-image{
-    align-items: center;
-    align-content: center;
-    margin-left: 50px;
-    display: inline;
+
+.image{
+    height: 300px;
+    width: 300px;
 }
 .product-title{
-    align-items: center;
-    align-content: center;
-    margin-left: 50px;
-    display: inline;
-}
-.product-quantity{
-    align-items: center;
-    align-content: center;
-    margin-left: 50px;
-    display: inline;
-    
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-content: flex-end;
+   
 }
 .product-price{
-    align-items: center;
-    align-content: center;
-    margin-left: 50px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-content: flex-end;
+}
+.product-quantity{
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-content: flex-end;
+    
 }
 .product-totprice{
-    align-items: center;
-    align-content: center;
-    margin-left: 50px;
     display: inline;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-content: flex-end;
     
     
+} 
+.quantity{
+    display: inline;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-content: flex-end;
+}
+.remove{
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    align-items: center;
+    align-content: flex-end;
+    justify-content: center;
+    
+    
+}
+.totals-value{
+    display: inline;
 }
