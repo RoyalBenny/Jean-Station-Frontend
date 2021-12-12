@@ -1,4 +1,6 @@
-<div class="container item-show">
+<div class ="row">
+    
+<div class="container item-show col-sm-12 col-md-4">
     <div class="head">
         <h1>Item</h1>
     </div>
@@ -7,11 +9,34 @@
         <img src="..//..//assets/img/tshirt.jpg">
     
       <div class="Detail">
-          <p>PUMA Tshirt</p>
+          <h3>PUMA Tshirt</h3>
           <h2>$ 558</h2>
-          <h3>45% off</h3>
+          <h3 style = color:green;>45% off</h3>
           
-         
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Size
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">M</a></li>
+              <li><a class="dropdown-item" href="#">L</a></li>
+              <li><a class="dropdown-item" href="#">XL</a></li>
+            </ul>
+          </div> 
+          <div>
+              <h4>Colors</h4>
+              <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" >
+              <label class="btn btn-secondary" for="option1">Red</label>
+
+              <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+              <label class="btn btn-secondary" for="option2">Blue</label>
+
+               <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" >
+              <label class="btn btn-secondary" for="option3">Black</label>
+
+               <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
+               <label class="btn btn-secondary" for="option4">Pink</label>
+          </div>
        
          <div>
              <h2>Product Details </h2>
@@ -34,8 +59,9 @@
           </div>
         </div>
     </div>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-success">Success</button> 
+    <button type="button" class="btn btn-danger">ADD TO CART</button>
+    <button type="button" class="btn btn-success">BUY NOW</button> 
     
 </div>
 
+</div>
