@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterService } from '../services/router.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rs: RouterService) { }
 
   ngOnInit(): void {
   }
-
+  onSignUp(){
+    this.rs.routeToSignUp();
+  }
 }
