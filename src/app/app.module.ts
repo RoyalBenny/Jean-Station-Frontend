@@ -13,7 +13,7 @@ import { OrderDeliveryComponent } from './order-delivery/order-delivery.componen
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductShowComponent } from './product-show/product-show.component';
-
+import {HttpClientModule} from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
 
 
@@ -41,7 +41,8 @@ import { CartComponent } from './cart/cart.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

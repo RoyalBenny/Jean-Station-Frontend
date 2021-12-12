@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Product } from '../Product';
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +10,22 @@ export class CartService {
 
   public cartItemList : any =[]
   public productList = new BehaviorSubject<any>([]);
-  public search = new BehaviorSubject<string>("");
+  
 
-  constructor() { }
+  constructor(private httpClient:HttpClient) { 
+    // this.httpClient.get<Array<Product>>("http://localhost:3000/shopping").subscribe(
+    //   (data)=>{
+    //     this.cartItemList=data;
+    //   }
+    // );
+  }
   getProducts(){
-    return this.productList.asObservable();
+    // return this.productList.asObservable();
+    return this.httpClient.get<any>("http://localhost:3000/shopping")
   }
 
   setProduct(product : any){
-    this.cartItemList.push(...product);
+    this.cartItemList.push(product);
     this.productList.next(product);
   }
   addtoCart(product : any){
