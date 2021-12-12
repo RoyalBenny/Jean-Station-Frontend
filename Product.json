@@ -1,7 +1,11 @@
 {
   "shopping":[
       {"id":1,
+<<<<<<< HEAD
           "img":"..//..//assets/img/tshirt.jpg",
+=======
+          "img":"../../assets/img/jens.jpg",
+>>>>>>> 313815d35ac045f948ce71056c2169814f81882e
           "price":2000,
           "name":"item1",
           "discount": "5 %",
@@ -11,9 +15,15 @@
           "color":"Red"
       },
       {"id":2,
+<<<<<<< HEAD
           "img":"..//..//assets/img/tshirt.jpg",
           "price":2000,
           "name":"item2",
+=======
+          "img":"../../assets/img/jens.jpg",
+          "price":2000,
+          "name":"item1",
+>>>>>>> 313815d35ac045f948ce71056c2169814f81882e
           "discount": "5 %",
           "quantity":2,
           "description":"Puma presents to you a new range of stylish and cool new Tshirts yet which are affordable for everyone",
@@ -21,9 +31,15 @@
           "color":"Red"
       },
       {"id":3,
+<<<<<<< HEAD
           "img":"..//..//assets/img/tshirt.jpg",
           "price":2000,
           "name":"item3",
+=======
+          "img":"../../assets/img/jens.jpg",
+          "price":2000,
+          "name":"item1",
+>>>>>>> 313815d35ac045f948ce71056c2169814f81882e
           "discount": "5 %",
           "quantity":2,
           "description":"Puma presents to you a new range of stylish and cool new Tshirts yet which are affordable for everyone",
@@ -31,9 +47,15 @@
           "color":"Red"
       },
       {"id":4,
+<<<<<<< HEAD
           "img":"..//..//assets/img/tshirt.jpg",
           "price":2000,
           "name":"item4",
+=======
+          "img":"../../assets/img/jens.jpg",
+          "price":2000,
+          "name":"item1",
+>>>>>>> 313815d35ac045f948ce71056c2169814f81882e
           "discount": "5 %",
           "quantity":2,
           "description":"Puma presents to you a new range of stylish and cool new Tshirts yet which are affordable for everyone",
