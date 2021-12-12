@@ -20,50 +20,17 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
       </div>
-   <table>
-       <tr>
-           <th>Product</th>
-           <th>Order Status</th>
-           <th>Date</th>
-       </tr>
-       <tr>
-           <td>
-               <div class= "product-info">
-                   <img src="..//..//assets/img/jeans.jpg">
-                   <div>
-                       <p>Jeans</p>
-                       <p>Price:$1500</p>
-                   </div>
-               </div>
-           </td>
-           <td>Delivered</td>
-           <td>20th october 2019</td>  
-       </tr>
-       <tr>
-        <td>
-            <div class= "product-info">
-                <img src="..//..//assets/img/shirt.jpg">
-                <div>
-                    <p>Shirt</p>
-                    <p>Price:$2500</p>
-                </div>
-            </div>
-        </td>
-        <td>Delivered</td>
-        <td>17th March 2021</td>    
-    </tr>
-    <tr>
-        <td>
-            <div class= "product-info">
-                <img src="..//..//assets/img/jacket.jpeg">
-                <div>
-                    <p>Jacket</p>
-                    <p>Price:$2000</p>
-                </div>
-            </div>
-        </td>
-        <td>Delivered</td>
-        <td>8th July 2021</td>
-    </tr>
-   </table>     
+      <table>
+        <tr>
+            <th>Product</th>
+            <th>Order Status</th>
+            <th>Date</th>
+        </tr>
+        <tr *ngFor="let i of products">
+            <td><p>{{i.address}}</p></td>
+            <td><p>{{i.price}}</p></td>
+            <td><p>{{i.date}}</p></td>
+            <td><p>{{i.status}}</p></td>
+        </tr>
+      </table>
 </div>

@@ -9,6 +9,13 @@ import { HeaderComponent } from './header/header.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { OrderDeliveryComponent } from './order-delivery/order-delivery.component';
 <<<<<<< HEAD
+import { FooterComponent } from './footer/footer.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { ProductShowComponent } from './product-show/product-show.component';
+import { CartComponent } from './cart/cart.component';
+import{HttpClientModule} from '@angular/common/http';
+=======
+<<<<<<< HEAD
 
 
 import { FooterComponent } from './footer/footer.component';
@@ -22,6 +29,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ProductShowComponent } from './product-show/product-show.component';
 <<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
+>>>>>>> 58f8360a6cda485e341c658ba5a8ca20f27c3537
 
  
 =======
@@ -50,10 +58,19 @@ const appRoutes: Routes = [
     SigninComponent,
     HeaderComponent,
 <<<<<<< HEAD
+    ItemListComponent,
+    OrderDeliveryComponent,
+    FooterComponent,
+    HomePageComponent,
+    ProductShowComponent,
+    CartComponent,
+=======
+<<<<<<< HEAD
 
     ItemListComponent,
     OrderDeliveryComponent,
 
+>>>>>>> 58f8360a6cda485e341c658ba5a8ca20f27c3537
     FooterComponent,
     HomePageComponent,
 <<<<<<< HEAD
@@ -84,13 +101,21 @@ const appRoutes: Routes = [
 <<<<<<< HEAD
     HttpClientModule
 =======
+<<<<<<< HEAD
+    HttpClientModule
+=======
     RouterModule.forRoot(appRoutes),
 >>>>>>> 7837e8ba4be8d33e22a4acf787591406173fe04a
 >>>>>>> 313815d35ac045f948ce71056c2169814f81882e
+>>>>>>> 58f8360a6cda485e341c658ba5a8ca20f27c3537
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
+<<<<<<< HEAD
+export class AppModule { }
+=======
 export class AppModule {}
 
 
+>>>>>>> 58f8360a6cda485e341c658ba5a8ca20f27c3537

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/product';
+import { CartService } from '../services/cart.service';
+import { ProductListService } from '../services/product-list.service';
 import { ActivatedRoute } from '@angular/router';
 import { RouterService } from '../services/router.service';
 
@@ -9,7 +12,10 @@ import { RouterService } from '../services/router.service';
 })
 export class ItemListComponent implements OnInit {
 
-  constructor(private as: ActivatedRoute, private rs: RouterService) { }
+products:Array<Product>=[]
+  constructor(private ps:ProductListService,private cs:CartService,private as: ActivatedRoute, private rs: RouterService) { 
+    this.ps.getProducts().subscribe((data)=>{this.products = data;});
+  }
   category: string ='';
   ngOnInit(): void {
       var value = this.as.snapshot.paramMap.get('value');
@@ -18,11 +24,12 @@ export class ItemListComponent implements OnInit {
       if(value!=null)
       this.category = value.toUpperCase();
   }
-
   onItem(id: string) {
     console.log(id);
     this.rs.routeToProductShow(id);
   }
-
-
+  //addToCart(i:any)
+  //{
+   // this.cs.addToCart(i);
+  //}
 }

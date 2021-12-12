@@ -8,6 +8,7 @@
 img{
     width:200px;
     height:200px;
+    
 }
 .col-4{
     flex-basis: 25%;
@@ -19,21 +20,9 @@ img{
 p{
     color:green; 
 }
-.cc{
+.item-info{
     text-align: center;
 }
- @media screen and (min-width:900px ) {
-    .col {
-        width: 30%;
-    }
- }
- @media screen and (max-width: 900px) {
-    .col {
-       width: 50%;
-    }
- }
- @media screen and (max-width: 600px) {
-    .col {
-       width: 100%;
-    }
- }
+.dropdown{
+    display:flex;
+} 
