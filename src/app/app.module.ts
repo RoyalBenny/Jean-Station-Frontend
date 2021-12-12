@@ -13,6 +13,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ProductShowComponent } from './product-show/product-show.component';
 import { CartComponent } from './cart/cart.component';
 import { RouterModule, Routes } from '@angular/router';
+import { BuyPageComponent } from './buy-page/buy-page.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -21,8 +22,9 @@ const appRoutes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'item-list/:value', component: ItemListComponent},
   { path: 'order-delivery', component: OrderDeliveryComponent },
-  { path: 'product-show', component: ProductShowComponent },
+  { path: 'product-show/:id', component: ProductShowComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'buy-page/:id', component: BuyPageComponent }
 ];
 
 @NgModule({
@@ -37,6 +39,7 @@ const appRoutes: Routes = [
     HomePageComponent,
     ProductShowComponent,
     CartComponent,
+    BuyPageComponent,
   ],
   imports: [
     BrowserModule,

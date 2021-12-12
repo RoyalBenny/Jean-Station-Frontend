@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { RouterService } from '../services/router.service';
 
 @Component({
   selector: 'app-item-list',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ItemListComponent implements OnInit {
 
-  constructor(private as: ActivatedRoute) { }
+  constructor(private as: ActivatedRoute, private rs: RouterService) { }
   category: string ='';
   ngOnInit(): void {
       var value = this.as.snapshot.paramMap.get('value');
@@ -16,6 +17,11 @@ export class ItemListComponent implements OnInit {
       //alert(value);
       if(value!=null)
       this.category = value.toUpperCase();
+  }
+
+  onItem(id: string) {
+    console.log(id);
+    this.rs.routeToProductShow(id);
   }
 
 

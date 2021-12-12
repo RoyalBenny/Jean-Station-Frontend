@@ -18,7 +18,7 @@ export class RouterService {
       this.router.navigate(['/login']);
     }
 
-    routeToSignup(){
+    routeToSignUp(){
       this.router.navigate(['/signin']);
     }
 
@@ -28,8 +28,8 @@ export class RouterService {
     routeToItemList(category:any){
       this.router.navigate(['/item-list',category]);
     }
-    routeToProductShow(){
-      this.router.navigate(['/product-show']);
+    routeToProductShow(id: string){
+      this.router.navigate(['/product-show',id]);
     }
     routeToCart(){
       this.router.navigate(['/cart']);
@@ -37,6 +37,10 @@ export class RouterService {
 
     routeToOrder(){
       this.router.navigate(['/order-delivery']);
+    }
+
+    routeToBuy(id:string){
+      this.router.navigate(['/buy-page',id]);
     }
    
 }
