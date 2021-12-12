@@ -8,11 +8,8 @@ import { SigninComponent } from './signin/signin.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
-<<<<<<< HEAD
 import { ProductShowComponent } from './product-show/product-show.component';
-=======
-import { CartComponent } from './cart/cart.component';
->>>>>>> 0c378c9501af76ee707798862079c01f19c6a782
+
 
 @NgModule({
   declarations: [
@@ -22,11 +19,8 @@ import { CartComponent } from './cart/cart.component';
     HeaderComponent,
     FooterComponent,
     HomePageComponent,
-<<<<<<< HEAD
-    ProductShowComponent
-=======
-    CartComponent
->>>>>>> 0c378c9501af76ee707798862079c01f19c6a782
+    ProductShowComponent,
+
   ],
   imports: [
     BrowserModule,
