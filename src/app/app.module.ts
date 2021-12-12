@@ -8,13 +8,11 @@ import { SigninComponent } from './signin/signin.component';
 import { HeaderComponent } from './header/header.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { OrderDeliveryComponent } from './order-delivery/order-delivery.component';
-
-
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductShowComponent } from './product-show/product-show.component';
-
 import { CartComponent } from './cart/cart.component';
+import{HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -23,17 +21,12 @@ import { CartComponent } from './cart/cart.component';
     LoginComponent,
     SigninComponent,
     HeaderComponent,
-
     ItemListComponent,
     OrderDeliveryComponent,
-
     FooterComponent,
     HomePageComponent,
-
     ProductShowComponent,
-
     CartComponent,
-
     FooterComponent,
     HomePageComponent,
     ProductShowComponent,
@@ -41,7 +34,8 @@ import { CartComponent } from './cart/cart.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -23,76 +23,13 @@
       </div>
 
     <div class="row">
-        <div class="card col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="item-info">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="card col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="item-info">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="card col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="item-info">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="card col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="item-info">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="card col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="item-info">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="card col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="item-info">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="card col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="item-info">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="card col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="item-info">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>  
+       <ng-container *ngFor="let i of products">
+           <div class="card col-md-4">
+               <img src="{{i.img}}">
+               <p><strong>{{i.name}}</strong></p>
+               <p><strong>{{i.price}}</strong></p>
+               <p><strong>>{{i.discount}}</strong></p>
+               
+           </div>
+       </ng-container>
 </div>
