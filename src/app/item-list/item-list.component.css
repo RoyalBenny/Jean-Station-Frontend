@@ -1,0 +1,39 @@
+
+.item-list{
+    margin:auto;
+    max-width:1080px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+img{
+    width:200px;
+    height:200px;
+}
+.col-4{
+    flex-basis: 25%;
+    padding:10px;
+    min-width:200px;
+    margin-bottom: 50px;
+    
+}
+p{
+    color:green; 
+}
+.cc{
+    text-align: center;
+}
+ @media screen and (min-width:900px ) {
+    .col {
+        width: 30%;
+    }
+ }
+ @media screen and (max-width: 900px) {
+    .col {
+       width: 50%;
+    }
+ }
+ @media screen and (max-width: 600px) {
+    .col {
+       width: 100%;
+    }
+ }
