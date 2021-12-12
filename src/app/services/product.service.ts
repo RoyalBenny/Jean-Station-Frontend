@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Products } from '../Product';
+import { Product } from '../models/product';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -8,10 +8,10 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  products:Array<Products>=[];
-  subject:BehaviorSubject<Array<Products>> = new BehaviorSubject(this.products)
+  products:Array<Product>=[];
+  subject:BehaviorSubject<Array<Product>> = new BehaviorSubject(this.products)
   constructor(private httpClient:HttpClient) { 
-    this.httpClient.get<Array<Products>>("http://localhost:3000/shopping")
+    this.httpClient.get<Array<Product>>("http://localhost:3000/shopping")
     .subscribe(
       (data)=>{
         this.products =data;
@@ -19,7 +19,7 @@ export class ProductService {
       }
     )
   }
-  getProducts():Observable<Array<Products>>
+  getProducts():Observable<Array<Product>>
   {
     return this.subject;
   }

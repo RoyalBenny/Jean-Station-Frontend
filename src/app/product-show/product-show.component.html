@@ -1,44 +1,10 @@
-<<<<<<< HEAD
+
 <div class="container">
-<div class="head">
+  <div class="head">
   <h1>Item</h1>
-</div>
-=======
-<div class ="row">
-    
-<div class="container item-show col-sm-12 col-md-4">
-    <br>
-    <div class="Product">       
+   </div>
 
-        <img src="..//..//assets/img/tshirt.jpg">
-    
-      <div class="Detail">
-          <h3>PUMA Tshirt</h3>
-          <h2>$ 558</h2>
-          <h3 style = color:green;>45% off</h3>
-          
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Size
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" >M</a></li>
-              <li><a class="dropdown-item" >L</a></li>
-              <li><a class="dropdown-item" >XL</a></li>
-            </ul>
-          </div> 
-          <div>
-              <h4>Colors</h4>
-              <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" >
-              <label class="btn btn-warning" for="option1">Red</label>
-
-              <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-              <label class="btn btn-info" for="option2">Blue</label>
-             
->>>>>>> 313815d35ac045f948ce71056c2169814f81882e
-
-
-<div class="product-show">
+ <div class="product-show"> 
   <ng-container *ngFor="let i of products">
     <img src="{{i.img}}"alt="">
     <div class="Detail">
@@ -47,14 +13,9 @@
       <p><strong>Offer</strong>   {{i.discount}}</p>
       <p><strong>Description</strong>{{i.description}}</p>
     </div>
-<<<<<<< HEAD
   </ng-container>
-=======
     <button type="button" class="btn btn-danger">ADD TO CART</button>
     <button type="button" class="btn btn-success" (click)="onBuy('1')">BUY NOW</button> 
     
-</div>
-
->>>>>>> 313815d35ac045f948ce71056c2169814f81882e
-</div>
+  </div>
 </div>
