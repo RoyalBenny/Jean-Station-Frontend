@@ -6,10 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { HeaderComponent } from './header/header.component';
-<<<<<<< HEAD
-import { ItemListComponent } from './item-list/item-list.component';
-import { OrderDeliveryComponent } from './order-delivery/order-delivery.component';
-=======
+
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductShowComponent } from './product-show/product-show.component';
@@ -21,10 +18,7 @@ import { ProductShowComponent } from './product-show/product-show.component';
     LoginComponent,
     SigninComponent,
     HeaderComponent,
-<<<<<<< HEAD
-    ItemListComponent,
-    OrderDeliveryComponent
-=======
+
     FooterComponent,
     HomePageComponent,
     ProductShowComponent,
