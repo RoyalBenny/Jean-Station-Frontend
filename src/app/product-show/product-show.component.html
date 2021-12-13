@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<div class="container">
-<div class="head">
-  <h1>Item</h1>
-</div>
-=======
 <div class ="row">
     
 <div class="container item-show col-sm-12 col-md-4">
@@ -35,26 +29,38 @@
               <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
               <label class="btn btn-info" for="option2">Blue</label>
              
->>>>>>> 313815d35ac045f948ce71056c2169814f81882e
 
+               <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" >
+              <label class="btn btn-secondary" for="option3">Black</label>
 
-<div class="product-show">
-  <ng-container *ngFor="let i of products">
-    <img src="{{i.img}}"alt="">
-    <div class="Detail">
-      <p><strong>Name</strong>    {{i.name}}</p>
-      <p><strong>Price</strong>   {{i.price}}</p>
-      <p><strong>Offer</strong>   {{i.discount}}</p>
-      <p><strong>Description</strong>{{i.description}}</p>
+               <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
+               <label class="btn btn-success" for="option4">Green</label>
+          </div>
+       
+         <div>
+             <h2>Product Details </h2>
+            
+                    
+                    <div style ="display: inline;">
+                         <p>Fabtric   : Cotton Printed</p>
+                         <p>Pattern   : Printed</p>
+                         <p>Ideal for : Men </p>
+                         <p>Sleeve    : Half Sleeve</p>
+                    </div>
+                    
+                
+        </div>
+          <div class="description" >
+              <h2>Description</h2>
+            <p>Puma presents to you a new range of stylish and cool new Tshirts yet which are 
+                affordable for everyone.It is perfect for your summer attire.
+            </p>
+          </div>
+        </div>
     </div>
-<<<<<<< HEAD
-  </ng-container>
-=======
     <button type="button" class="btn btn-danger">ADD TO CART</button>
     <button type="button" class="btn btn-success" (click)="onBuy('1')">BUY NOW</button> 
     
 </div>
 
->>>>>>> 313815d35ac045f948ce71056c2169814f81882e
-</div>
 </div>
