@@ -32,7 +32,10 @@ const appRoutes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'buy-page/:id', component: BuyPageComponent },
   {path:'admin-product',component:AdminProductComponent},
-  {path:'addproduct',component:AddproductComponent}
+  {path:'addproduct',component:AddproductComponent},
+  {path:'admin-order',component:AdminOrderComponent},
+  {path:'admin-offer',component:AdminOfferComponent},
+  {path:'addoffers',component:AddoffersComponent}
 ];
 
 

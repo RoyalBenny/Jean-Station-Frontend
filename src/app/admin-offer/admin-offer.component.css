@@ -412,3 +412,6 @@
       display: none;
     }
   }
+  table{
+    width: 100%;
+  }

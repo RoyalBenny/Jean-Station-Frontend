@@ -3,7 +3,7 @@
         <div class="col-12 col-md-5 col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    <form class="p-1 d-flex flex-column justify-content-center">
+                    <form class="addform p-1 d-flex flex-column justify-content-center">
                         <div class="form-group p-1">
                           <label for="addproduct" class="p-2">Product Name</label>
                           <input type="string" class="form-control"  placeholder="Enter product name">
@@ -17,7 +17,7 @@
                             <input type="string" class="form-control"  placeholder="Enter discount">
                           </div>
                         <br>
-                        <button type="submit" class="btn btn-primary" style="width: 100px; margin: auto;">Submit</button>
+                        <button type="submit" class="btn btn-primary" (click)="Additem()" style="width: 100px; margin: auto;">Submit</button>
                     </form>
                 </div>
               </div>

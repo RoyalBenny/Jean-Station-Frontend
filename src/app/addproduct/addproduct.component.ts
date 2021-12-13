@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/product';
 
 @Component({
   selector: 'app-addproduct',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit {
+  listdata:any;
+  constructor() { 
+    this.listdata=[];
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
   }
-
+  Additem(){
+    this.listdata.push()
+  }
 }
