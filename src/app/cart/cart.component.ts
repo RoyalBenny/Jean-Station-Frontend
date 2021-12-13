@@ -10,10 +10,13 @@ export class CartComponent implements OnInit {
   public products:any=[];
   public Total!:number;
   // constructor(private cartservice:CartService ) {}
-  constructor(private rs:RouterService,private cartservice:CartService) { }
+  constructor(private rs:RouterService,private cartservice:CartService) {
+
+   }
 
 
   ngOnInit(): void {
+    this.Total = this.cartservice.getTotalPrice();
   }
   onBuy(id:string){
     this.rs.routeToBuy(id);

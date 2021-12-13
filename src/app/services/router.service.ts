@@ -26,6 +26,7 @@ export class RouterService {
       this.router.navigate(['/profile']);
     }
     routeToItemList(category:any){
+      console.log("in service "+category);
       this.router.navigate(['/item-list',category]);
     }
     routeToProductShow(id: string){
