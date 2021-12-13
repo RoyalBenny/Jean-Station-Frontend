@@ -14,6 +14,11 @@ import { CartComponent } from './cart/cart.component';
 import{HttpClientModule} from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BuyPageComponent } from './buy-page/buy-page.component';
+import { AdminProductComponent } from './admin-product/admin-product.component';
+import { AdminOrderComponent } from './admin-order/admin-order.component';
+import { AdminOfferComponent } from './admin-offer/admin-offer.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
+import { AddoffersComponent } from './addoffers/addoffers.component';
 
 
 const appRoutes: Routes = [
@@ -25,7 +30,9 @@ const appRoutes: Routes = [
   { path: 'order-delivery', component: OrderDeliveryComponent },
   { path: 'product-show/:id', component: ProductShowComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'buy-page/:id', component: BuyPageComponent }
+  { path: 'buy-page/:id', component: BuyPageComponent },
+  {path:'admin-product',component:AdminProductComponent},
+  {path:'addproduct',component:AddproductComponent}
 ];
 
 
@@ -44,6 +51,11 @@ const appRoutes: Routes = [
     FooterComponent,
     HomePageComponent,
     BuyPageComponent,
+    AdminProductComponent,
+    AdminOrderComponent,
+    AdminOfferComponent,
+    AddproductComponent,
+    AddoffersComponent,
   ],
   imports: [
     BrowserModule,

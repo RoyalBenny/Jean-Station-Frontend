@@ -42,5 +42,7 @@ export class RouterService {
     routeToBuy(id:string){
       this.router.navigate(['/buy-page',id]);
     }
-   
+   routeToAddproduct(){
+     this.router.navigate(['/addproduct'])
+   }
 }
