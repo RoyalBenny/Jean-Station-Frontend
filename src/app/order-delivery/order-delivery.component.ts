@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../models/product';
+import { Order } from '../models/order';
 import { ProductDeliveryService } from '../services/product-delivery.service';
 @Component({
   selector: 'app-order-delivery',
@@ -7,7 +7,7 @@ import { ProductDeliveryService } from '../services/product-delivery.service';
   styleUrls: ['./order-delivery.component.css']
 })
 export class OrderDeliveryComponent implements OnInit {
-  products:Array<Product>=[]
+  products:Array<Order>=[]
     constructor(private ps:ProductDeliveryService) { 
       this.ps.getProducts().subscribe((data)=>{this.products = data;});
     }

@@ -6,7 +6,7 @@
 
  <div class="product-show"> 
   <ng-container *ngFor="let i of products">
-    <img src="{{i.img}}"alt="">
+    <img src="{{i.imageUrl}}"alt="">
     <div class="Detail">
       <p><strong>Name</strong>    {{i.name}}</p>
       <p><strong>Price</strong>   {{i.price}}</p>
@@ -14,7 +14,7 @@
       <p><strong>Description</strong>{{i.description}}</p>
     </div>
   </ng-container>
-    <button type="button" class="btn btn-danger">ADD TO CART</button>
+    <button type="button" class="btn btn-danger"(click)="AddToCart">ADD TO CART</button>
     <button type="button" class="btn btn-success" (click)="onBuy('1')">BUY NOW</button> 
     
   </div>

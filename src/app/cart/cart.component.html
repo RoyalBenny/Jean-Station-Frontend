@@ -1,65 +1,69 @@
 <header class="container">
-   <div class="row">
-       <div class="col-12 col-md-4">
-         <!-- <button>Back</button> -->
-         <h1 class="d-flex justify-content-center">MY CART</h1>
-       </div>
-    </div>
+  <div class="row">
+      <div class="col-12 col-md-4">
+        <!-- <button>Back</button> -->
+        <h1 class="d-flex justify-content-center">MY CART</h1>
+      </div>
+   </div>
 </header>
 <br>
+
+<ng-container *ngIf="products.length !=0">
+ <div class="card-table">
 <div *ngFor="let item of products;let i=index">
 <div class="container">
-  <div class="row">
-    <div class="image col-12 col-md-4 d-flex justify-content-center">
-<<<<<<< HEAD
-      <img src="{{item.image}}">
-=======
-      <img src="../../assets/img/jens.jpg" alt="jeans img">
->>>>>>> 7837e8ba4be8d33e22a4acf787591406173fe04a
-    </div>
-    <div class="col-12 col-md-8 d-flex align-items-center">
-      <div class="col-4">
-     <div class="product-title">{{item.name}}</div>
-     <div class="product-price">{{item.price}}</div>
-       <div class="quantity">Quantity:</div>
-<<<<<<< HEAD
-     <input type="number" value="{item.quantity}}" min="1">
-     <div class="product-totprice">Total:</div>
-     <div class="product-totprice">{{item.totals}}</div>
-        <button (click)="RemoveItem(item)" class=" btn btn-danger">Remove</button>
-        <button (click)="Emptycart()"class="btn btn-danger">Empty Cart</button>
-=======
-     <input type="number" value="2" min="1">
-        <button class=" btn btn-danger">Remove</button>
-        <button class=" btn btn-warning" (click)="onBuy('1')">Place Order</button>
-
->>>>>>> 7837e8ba4be8d33e22a4acf787591406173fe04a
-       <br>
-    </div>
-  </div>
+ <div class="row">
+   <div class="image col-12 col-md-4 d-flex justify-content-center">
+     <img src="{{item.imageUrl}}">
+   </div>
+   <div class="col-12 col-md-8 d-flex align-items-center">
+     <div class="col-4">
+    <div class="product-title">{{item.name}}</div>
+    <div class="product-price">{{item.price}}</div>
+      <div class="quantity">Quantity:</div>
+    <input type="number" value="{item.quantity}}" min="1">
+    <div class="product-totprice">Total:</div>
+    <div class="product-totprice">{{item.totals}}</div>
+      <div><button (click)="RemoveItem(item)" class=" btn btn-danger">Remove</button></div>
+       <div><button class=" btn btn-warning" (click)="onBuy('1')">Place Order</button></div>
+      <br>
+   </div>
+ </div>
 </div>
 </div>
 <br>
 
-  <br>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-10 d-flex justify-content-center">
-        <div class="card"style="width:30em;">
-          <div class="totals">
-            <div class="totals-item">
-              <label>Shipping:</label>
-              <div class="totals-value" id="cart-shipping">Rs. 15.00</div>
-            </div>
-            <div class="totals-item totals-item-total">
-              <label>Grand Total:</label>
-              <div class="totals-value" id="cart-total">Rs. {{Total}}</div>
-            </div>
-          </div>     
-              <button class="btn btn-primary">Buy Now</button>
-        </div>
-        <div class="center"><h5>Your Cart is Empty</h5></div>
-      </div>
-    </div>
-  </div>
+ <br>
+ <div class="container">
+   <div class="row">
+     <div class="col-12 col-md-10 d-flex justify-content-center">
+       <div class="card"style="width:30em;">
+         <div class="totals">
+           <div class="totals-item">
+             <label>Shipping:</label>
+             <div class="totals-value" id="cart-shipping">Rs. 15.00</div>
+           </div>
+           <div class="totals-item totals-item-total">
+             <label>Grand Total:</label>
+             <div class="totals-value" id="cart-total">Rs. {{Total}}</div>
+           </div>
+         </div>     
+             <button class="btn btn-primary">Buy Now</button>
+       </div>
+       <!-- <div class="center"><h5>Your Cart is Empty</h5></div> -->
+     </div>
+   </div>
+ </div>
 </div>
+</div>
+</ng-container>
+
+<ng-container *ngIf="products.length==0">
+ <div class="container">
+   <div class="card">
+      <div class="center">
+        <h5>Your Cart is Empty Now</h5> 
+       </div>
+     </div>
+   </div>
+ </ng-container>

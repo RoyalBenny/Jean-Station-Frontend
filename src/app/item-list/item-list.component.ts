@@ -28,8 +28,8 @@ products:Array<Product>=[]
     console.log(id);
     this.rs.routeToProductShow(id);
   }
-  //addToCart(i:any)
-  //{
-   // this.cs.addToCart(i);
-  //}
+  addToCart(i:any)
+  {
+    this.cs.addtoCart(i);
+  }
 }
