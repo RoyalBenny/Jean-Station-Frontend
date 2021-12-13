@@ -17,12 +17,17 @@ products:Array<Product>=[]
     this.ps.getProducts().subscribe((data)=>{this.products = data;});
   }
   category: string ='';
+  
   ngOnInit(): void {
       var value = this.as.snapshot.paramMap.get('value');
-      console.log(value);
+      console.log("in item-list init"+value);
       //alert(value);
       if(value!=null)
       this.category = value.toUpperCase();
+  }
+  ngOnChanges(){
+    var value = this.as.snapshot.paramMap.get('value');
+    console.log("in item-list onchanges "+value);
   }
   onItem(id: string) {
     console.log(id);
@@ -31,5 +36,6 @@ products:Array<Product>=[]
   addToCart(i:any)
   {
     this.cs.addtoCart(i);
+    this.rs.routeToCart();
   }
 }

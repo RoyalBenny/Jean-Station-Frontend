@@ -10,24 +10,22 @@ export class CartComponent implements OnInit {
   public products:any=[];
   public Total!:number;
   // constructor(private cartservice:CartService ) {}
-  constructor(private rs:RouterService,private cartservice:CartService) { }
+  constructor(private rs:RouterService,private cartservice:CartService) {
 
+   }
 
   ngOnInit(): void {
    this.cartservice.getProducts().subscribe(res=>{
      this.products=res;
   // this.Total=this.cartservice.getTotalPrice();
 })
-
   }
-  RemoveItem(item:any){
-    this.cartservice.removeCartItem(item);
-  }
-  Emptycart(){
-    this.cartservice.removeAllCart();
-  }
+  
   onBuy(id:string){
     this.rs.routeToBuy(id);
+  }
+  RemoveItem(item:any){
+   // this.cartservice.removeItem(item);
   }
 
 }

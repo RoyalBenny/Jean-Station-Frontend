@@ -11,7 +11,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductShowComponent } from './product-show/product-show.component';
 import { CartComponent } from './cart/cart.component';
-import{HttpClientModule} from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BuyPageComponent } from './buy-page/buy-page.component';
 import { AdminProductComponent } from './admin-product/admin-product.component';
@@ -19,6 +18,7 @@ import { AdminOrderComponent } from './admin-order/admin-order.component';
 import { AdminOfferComponent } from './admin-offer/admin-offer.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { AddoffersComponent } from './addoffers/addoffers.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const appRoutes: Routes = [
@@ -48,8 +48,6 @@ const appRoutes: Routes = [
     HomePageComponent,
     ProductShowComponent,
     CartComponent,
-    FooterComponent,
-    HomePageComponent,
     BuyPageComponent,
     AdminProductComponent,
     AdminOrderComponent,
@@ -67,7 +65,6 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}
 
 
