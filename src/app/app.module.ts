@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -14,6 +13,8 @@ import { ProductShowComponent } from './product-show/product-show.component';
 import { CartComponent } from './cart/cart.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BuyPageComponent } from './buy-page/buy-page.component';
+import{HttpClientModule} from '@angular/common/http';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'buy-page/:id', component: BuyPageComponent }
 ];
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
+
   ],
   providers: [],
   bootstrap: [AppComponent],

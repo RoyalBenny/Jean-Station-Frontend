@@ -2,95 +2,33 @@
     <h1>{{category}}</h1>
 </div>
 <div class="container item-list">
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Sort
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Filter
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sort
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filter
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
       </div>
-    <div class="row">
-        <div class="col-4" (click)="onItem('1')">     
-        <img src="..//..//assets/img/jeans.jpg" alt="jeans">
-        <div class="cc">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="cc">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="cc">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="cc">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="cc">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="cc">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="cc">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>
-       <div class="col-4">     
-        <img src="..//..//assets/img/jeans.jpg">
-        <div class="cc">
-        <h4>Jeans</h4>
-        <h4>$1500</h4>
-        <p>45% off </p>
-        <button type="button" class="btn btn-danger">Add to Cart</button>
-    </div>
-       </div>   
+  
+      </div>
+<div class="row">
+       <ng-container *ngFor="let i of products">
+           <div class="card col-md-4"(click)="onItem('1')" >
+               <img src="{{i.imageUrl}}">
+               <p><strong>{{i.name}}</strong></p>
+               <p><strong>{{i.price}}</strong></p>
+               <p><strong>{{i.discount}}</strong></p>
+               <button (click)="addToCart(i)" class="btn btn-info">Add To Cart</button>
+           </div>
+       </ng-container>
 </div>

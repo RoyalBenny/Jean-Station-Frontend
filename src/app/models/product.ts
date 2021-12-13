@@ -8,9 +8,10 @@ export class Product {
     size: Size;
     color: Color;
     quantity: number;
+    discount:number;
 
     constructor(id: number, name: string, price: number, category: Category,
-         imageUrl: string, description: string, size: Size, color: Color, quantity: number) {
+         imageUrl: string, description: string, size: Size, color: Color, quantity: number,discount:number) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -20,6 +21,7 @@ export class Product {
         this.size = size;
         this.color = color;
         this.quantity = quantity;
+        this.discount=discount;
     }   
 
 }

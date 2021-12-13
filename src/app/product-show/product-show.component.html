@@ -1,66 +1,21 @@
-<div class ="row">
-    
-<div class="container item-show col-sm-12 col-md-4">
-    <br>
-    <div class="Product">       
 
-        <img src="..//..//assets/img/tshirt.jpg">
-    
-      <div class="Detail">
-          <h3>PUMA Tshirt</h3>
-          <h2>$ 558</h2>
-          <h3 style = color:green;>45% off</h3>
-          
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Size
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" >M</a></li>
-              <li><a class="dropdown-item" >L</a></li>
-              <li><a class="dropdown-item" >XL</a></li>
-            </ul>
-          </div> 
-          <div>
-              <h4>Colors</h4>
-              <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" >
-              <label class="btn btn-warning" for="option1">Red</label>
+<div class="container">
+  <div class="head">
+  <h1>Item</h1>
+   </div>
 
-              <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-              <label class="btn btn-info" for="option2">Blue</label>
-             
-
-               <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" >
-              <label class="btn btn-secondary" for="option3">Black</label>
-
-               <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-               <label class="btn btn-success" for="option4">Green</label>
-          </div>
-       
-         <div>
-             <h2>Product Details </h2>
-            
-                    
-                    <div style ="display: inline;">
-                         <p>Fabtric   : Cotton Printed</p>
-                         <p>Pattern   : Printed</p>
-                         <p>Ideal for : Men </p>
-                         <p>Sleeve    : Half Sleeve</p>
-                    </div>
-                    
-                
-        </div>
-          <div class="description" >
-              <h2>Description</h2>
-            <p>Puma presents to you a new range of stylish and cool new Tshirts yet which are 
-                affordable for everyone.It is perfect for your summer attire.
-            </p>
-          </div>
-        </div>
+ <div class="product-show"> 
+  <ng-container *ngFor="let i of products">
+    <img src="{{i.imageUrl}}"alt="">
+    <div class="Detail">
+      <p><strong>Name</strong>    {{i.name}}</p>
+      <p><strong>Price</strong>   {{i.price}}</p>
+      <p><strong>Offer</strong>   {{i.discount}}</p>
+      <p><strong>Description</strong>{{i.description}}</p>
     </div>
-    <button type="button" class="btn btn-danger">ADD TO CART</button>
+  </ng-container>
+    <button type="button" class="btn btn-danger"(click)="AddToCart">ADD TO CART</button>
     <button type="button" class="btn btn-success" (click)="onBuy('1')">BUY NOW</button> 
     
-</div>
-
+  </div>
 </div>
