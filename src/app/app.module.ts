@@ -36,6 +36,7 @@ const appRoutes: Routes = [
   {path:'admin-order',component:AdminOrderComponent},
   {path:'admin-offer',component:AdminOfferComponent},
   {path:'addoffers',component:AddoffersComponent}
+  
 ];
 
 

@@ -15,7 +15,6 @@ export class Offer{
             this.id=id;
             this.category=category;
             this.role=role;
-            this.validityDate=validityDate;
-            
+            this.validityDate=validityDate;    
         }
 }

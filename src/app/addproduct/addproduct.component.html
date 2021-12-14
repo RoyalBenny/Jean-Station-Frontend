@@ -1,33 +1,82 @@
-<div class="container">
-    <div class="row d-flex justify-content-center" style="padding-top:3vh;">
-        <div class="col-12 col-md-5 col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <form class="addform p-1 d-flex flex-column justify-content-center">
-                        <div class="form-group p-1">
-                          <label for="addproduct" class="p-2">Product Name</label>
-                          <input type="string" class="form-control"  placeholder="Enter product name">
-                        </div>
-                        <div class="form-group p-1">
-                          <label for="price" class="p-2">Price</label>
-                          <input type="number" class="form-control"  placeholder="Enter price">
-                        </div>
-                        <div class="form-group p-1">
-                            <label for="discount" class="p-2">Discount</label>
-                            <input type="string" class="form-control"  placeholder="Enter discount">
-                          </div>
-                        <br>
-                        <button type="submit" class="btn btn-primary" (click)="Additem()" style="width: 100px; margin: auto;">Submit</button>
-                    </form>
-                </div>
+<!--<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1>MyDayApplication</h1>-->
+        <div class="d-flex">
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Tasks</button>
+      </div>
+     
+  
+
+<table class="table">
+  <thead>
+      <tr>
+          <th scope="col">ProductName</th>
+          <th scope="col">Price</th>
+          <th scope="col">Discount</th>
+          
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let row of products">
+         <td>{{row.name}}</td>
+         <td>{{row.price}}</td>
+         <td>{{row.discount}}</td>
+         <td>
+            
+             <button (click)="AddProduct(row)" class="btn btn-danger mx-3">Submit</button>
+
+         </td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Your Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+       
+          <form [formGroup]="formValue">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Date</label>
+              <input type="email" formControlName="taskno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text"></div>
+            
+            <div>
+              <ejs-calendar id=calendar [value]='value' [min]='minDate' [max]='maxDate' > </ejs-calendar >
+            </div>
+            </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Task No</label>
+                <input type="email" formControlName="taskno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text"></div>
               </div>
-        </div>
-        <!-- <div class="row " style="padding-top:3vh;">
-            <button type="submit" class="btn btn-outline-secondary" style="width:max-content; margin: auto;" (click)="onSignUp()">Create an account</button>
-
-        </div> -->
-
+              <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Task Name</label>
+                  <input type="email"  formControlName="taskname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Add a note</label>
+                  <input type="email"  formControlName="taskdescription" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text"></div>
+                </div>
+              
+             
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button"  (click)="postTaskDetails()" class="btn btn-primary">Add</button>
+        <button type="button"  (click)="updateTaskDetails()" class="btn btn-primary">Update</button>
+        <button type="button" class="btn btn-danger">Send</button>
+      </div>
     </div>
-
+  </div>
 </div>
-
