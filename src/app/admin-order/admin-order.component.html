@@ -76,23 +76,23 @@
           </ul> -->
           <table>
             <tr>
-                <th>Id</th>
+                <th>User Id</th>
                 <th>Product Id</th>
                 <th>Address</th>
                 <th>Date</th>
                 <th>Price</th>
                 <th>Status</th>
-                <th>Image</th>
+                
 
             </tr>
             <tr *ngFor="let i of orders">
-                <td><p>{{i.id}}</p></td>
+                <td><p>{{i.userId}}</p></td>
                 <td><p>{{i.productId}}</p></td>
                 <td><p>{{i.address}}</p></td>
                 <td><p>{{i.date}}</p></td>
                 <td><p>{{i.price}}</p></td>
                 <td><p>{{i.status}}</p></td>
-                <td><p>{{i.imageUrl}}</p></td>
+                
             </tr>
           </table>
           </div>

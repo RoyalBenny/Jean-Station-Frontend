@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterService } from '../services/router.service';
 import { Product } from '../models/product';
-import { AddproductComponent } from '../addproduct/addproduct.component';
 @Component({
   selector: 'app-admin-product',
   templateUrl: './admin-product.component.html',
@@ -9,7 +8,6 @@ import { AddproductComponent } from '../addproduct/addproduct.component';
 })
 export class AdminProductComponent implements OnInit {
   products:Array<Product>=[]
-
   constructor(private rs:RouterService) { }
 
   ngOnInit(): void {
@@ -26,5 +24,4 @@ export class AdminProductComponent implements OnInit {
   productclick(){
     this.rs.routeToAdminProduct();
   }
- 
 }

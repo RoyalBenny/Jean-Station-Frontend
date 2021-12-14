@@ -58,4 +58,5 @@ export class RouterService {
    routeToAddoffer(){
      this.router.navigate(['/addoffers']);
    }
+   
 }

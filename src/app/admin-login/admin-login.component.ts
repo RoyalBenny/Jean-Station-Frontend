@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterService} from '../services/router.service';
+import { RouterService } from '../services/router.service';
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.component.html',
@@ -11,8 +11,7 @@ export class AdminLoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSignUp(){
-    this.rs.routeToSignUp();
+  Adminlog(){
+    this.rs.routeToAdminProduct();
   }
-
 }

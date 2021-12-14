@@ -1,32 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { RouterService } from '../services/router.service';
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-addproduct',
   templateUrl: './addproduct.component.html',
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit {
-addForm:FormGroup;
-listData:any;
-  constructor(private fb:FormBuilder,private rs:RouterService  ){
+ products:Array<Product>=[];
+  
 
-      this.listData = [];
 
-    this.addForm = this.fb.group({
-      name : ['', Validators.required],
-      address : ['', Validators.required],
-      ContactNo: ['', Validators.required],
-      gender: ['', Validators.required]
-    })
-  }
+  constructor(private rs:RouterService ){   } 
   ngOnInit(): void {
+      
   }
-  AddItem(){
-    this.listData.push(this.addForm.value);
-    this.rs.routeToAdminProduct();
+  loginForm=new FormGroup({
+    name:new FormControl('',Validators.required),
+    discount:new FormControl('',Validators.required),
+    price:new FormControl('',Validators.required),
+    image:new FormControl('',Validators.required)
+    
+  });
+  
+  Additem(){
+    console.log("form"+this.loginForm);
+    this.loginForm.reset();
+    
+    
   }
 
-}
+  
+  
+  }

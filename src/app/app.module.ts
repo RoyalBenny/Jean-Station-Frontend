@@ -20,7 +20,8 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 import { AddoffersComponent } from './addoffers/addoffers.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
   {path:'addproduct',component:AddproductComponent},
   {path:'admin-order',component:AdminOrderComponent},
   {path:'admin-offer',component:AdminOfferComponent},
-  {path:'addoffers',component:AddoffersComponent}
+  {path:'addoffers',component:AddoffersComponent},
+  {path:'admin-login',component:AdminLoginComponent}
 ];
 
 

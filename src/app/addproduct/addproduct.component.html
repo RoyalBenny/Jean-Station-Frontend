@@ -1,53 +1,22 @@
-<div class="row d-flex justify-content-center" style="padding-top:3vh;">
-  <div class="col-12 col-md-5 col-lg-6">
-      <div class="card">
-          <div class="card-body">
+<form [formGroup] = "loginForm" (ngSubmit)="Additem()">
 
-<form [formGroup]="addForm"class="p-1 d-flex flex-column justify-content-center">
-  <div class="mt-5">
-    <div class="form-row">
-      <div class="col-md-12">
-        <div class="form-group">
-          <label >Product Name </label>
-        </div>
-        <div class="form-row">
-            <div class="col">
-              <input type="text" formControlName="name" class="form-control" placeholder="enter product name">
-            </div>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="form-group">
-          <label > Price </label>
-        </div>
-        <div class="form-row">
-            <div class="col">
-              <input type="number" formControlName="price" class="form-control" placeholder="enter price">
-            </div>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="form-group">
-          <label > Discount </label>
-        </div>
-        <div class="form-row">
-            <div class="col">
-              <input type="number" formControlName="ContactNo" class="form-control" placeholder="enter discount">
-            </div>
-        </div>
-      <br>
-      <div class="form-row mt-4">
-        <div class="col-md-6">
-          <button type="button" class="btn btn-primary" (click)="AddItem()">Submit</button>
-        </div>
-      </div>
-      </div>
-    </div>
+  <div class="form-control">
+      Product name <br><input type="text" formControlName="name"placeholder="enter product name" id="name">
+  </div>
+  <div class="form-control">
+    
+    Discount <br> <input type="text" formControlName="discount"placeholder="enter discount" id="discount">
+</div>
+<div class="form-control">
+  <!-- Username<input type="text" [(ngModel)]="u.id"> -->
+  Price <br><input type="text" formControlName="price"placeholder="enter price" id="price">
+</div>
+  <div class="form-control">
+      <!-- Password<input type="text" [(ngModel)]="u.password"> -->
+     Image <br><input type="text" formControlName="image"placeholder="enter image url" id="imageUrl">
+  </div>
+  <div class="form-control">
+      <input type="submit" value="submit" id="btnsubmit">
+    <!-- <button (click)="loginHandler()">{{caption}}</button> -->
   </div>
 </form>
-</div>
-      </div>
-      </div>
-      
-</div>
-
