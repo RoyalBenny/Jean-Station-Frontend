@@ -23,6 +23,7 @@ products:Array<Product>=[];
   }
 
   onBuy(id:string){
+    
     console.log(id);
     this.rs.routeToBuy(id);
   }
