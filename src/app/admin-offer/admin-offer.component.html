@@ -1,0 +1,98 @@
+<div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">ADMIN PORTAL</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <!-- <a href="#" class="active"> -->
+            <i class='bx bx-grid-alt' ></i>
+            <button (click)="productclick()" class="btn btn-info">Product</button>
+          <!-- </a> -->
+        </li>
+        <li>
+          <!-- <a href="#"> -->
+            <i class='bx bx-list-ul' ></i>
+            <button (click)="orderclick()" class="btn btn-info">Order List</button>
+          <!-- </a> -->
+        </li>
+        <li>
+          <!-- <a href="#"> -->
+            <i class='bx bx-coin-stack' ></i>
+            <button (click)="offerclick()" class="btn btn-info">Offer</button>
+          <!-- </a> -->
+        </li>
+        <li>
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Offers</span>
+      </div>
+      <div class="add offer">
+        <button (click)="Addoffer()" class="btn btn-info">Add Offer</button>
+      </div>
+    </nav>
+    <div class="home-content">
+      <div class="overview-boxes">
+      </div>
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="sales-details">
+            <table>
+              <tr>
+                  <th>Id</th>
+                  <th>Category</th>
+                  <th>Role</th>
+                  <th>Validation Date</th>
+              </tr>
+              <tr *ngFor="let i of offers"> 
+                  <td><p>{{i.id}}</p></td>
+                  <td><p>{{i.category}}</p></td>
+                  <td><p>{{i.role}}</p></td>
+                  <td><p>{{i.validityDate}}</p></td> 
+              </tr>
+            </table>
+
+            <!-- <ul class="details"> -->
+                <!-- <li class="topic">Id</li>
+                <li><a href="#">1</a></li>
+              </ul>
+            <ul class="details">
+              <li class="topic">Offer Name</li>
+              <li><a href="#">Offer 1</a></li>
+            </ul>
+            <ul class="details">
+                <li class="topic">Offers</li>
+                <li><a href="#">30%</a></li>
+              </ul>
+              <ul class="details">
+                <li class="topic">Validity</li>
+                <li><a href="#">10 Days</a></li>
+              </ul> -->
+          </div>
+        </div>
+     
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>

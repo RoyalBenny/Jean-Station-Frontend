@@ -10,6 +10,7 @@ export class Order {
         public size:Size,
         public color:Color,
         public status:Status,
+        public imageUrl: string
     ){}
 }
 

@@ -14,10 +14,13 @@ export class CartComponent implements OnInit {
 
    }
 
-
   ngOnInit(): void {
-    this.Total = this.cartservice.getTotalPrice();
+   this.cartservice.getProducts().subscribe(res=>{
+     this.products=res;
+  // this.Total=this.cartservice.getTotalPrice();
+})
   }
+  
   onBuy(id:string){
     this.rs.routeToBuy(id);
   }

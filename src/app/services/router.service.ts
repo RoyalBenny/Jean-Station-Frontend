@@ -43,5 +43,19 @@ export class RouterService {
     routeToBuy(id:string){
       this.router.navigate(['/buy-page',id]);
     }
-   
+   routeToAddproduct(){
+     this.router.navigate(['/addproduct']);
+   }
+   routeToAdminOrder(){
+     this.router.navigate(['/admin-order']);
+   }
+   routeToAdminOffer(){
+     this.router.navigate(['/admin-offer']);
+   }
+   routeToAdminProduct(){
+     this.router.navigate(['/admin-product']);
+   }
+   routeToAddoffer(){
+     this.router.navigate(['/addoffers']);
+   }
 }
