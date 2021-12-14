@@ -1,24 +1,20 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row d-flex justify-content-center" style="padding-top:3vh;">
         <div class="col-12 col-md-5 col-lg-6">
             <div class="card">
                 <div class="card-body">
                     <form class="p-1 d-flex flex-column justify-content-center">
                         <div class="form-group p-1">
-                          <label for="addoffer" class="p-2">Id</label>
-                          <input type="number" class="form-control"  placeholder="Enter Id">
-                        </div>
-                        <div class="form-group p-1">
                           <label for="offer" class="p-2">Offer Name</label>
-                          <input type="string" class="form-control"  placeholder="Enter Offer name">
+                          <input type="string" class="form-control"  placeholder="Enter Offer name"[(ngModel)="Offers.category">
                         </div>
                         <div class="form-group p-1">
-                            <label for="offers" class="p-2">Offers</label>
-                            <input type="string" class="form-control"  placeholder="Enter Offers">
+                            <label for="offers" class="p-2">Discount</label>
+                            <input type="string" class="form-control"  placeholder="Enter Offers"[(ngModel)="Offers.discount">
                           </div>
                           <div class="form-group p-1">
                             <label for="validity" class="p-2">Validity</label>
-                            <input type="any" class="form-control"  placeholder="Enter Validity">
+                            <input type="any" class="form-control"  placeholder="Enter Validity" [(ngModel)="Offers.validityDate"]>
                           </div>
                         <br>
                         <button type="submit" class="btn btn-primary" style="width: 100px; margin: auto;">Submit</button>
@@ -26,12 +22,66 @@
                 </div>
               </div>
         </div>
-        <!-- <div class="row " style="padding-top:3vh;">
+         <div class="row " style="padding-top:3vh;">
             <button type="submit" class="btn btn-outline-secondary" style="width:max-content; margin: auto;" (click)="onSignUp()">Create an account</button>
 
         </div> -->
 
+    <!-- </div> -->
+
+<!-- </div> --> 
+
+<div class="card">
+  <form [formGroup]="userForm">
+    <div class="mt-5">
+      <div class="form-row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label > Offer Name </label>
+          </div>
+          <div class="form-row">
+              <div class="col">
+                <input type="text" formControlName="name" class="form-control" placeholder="name">
+              </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label > Discount </label>
+          </div>
+          <div class="form-row">
+              <div class="col">
+                <input type="text" formControlName="address" class="form-control" placeholder="discount">
+              </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label > Validity </label>
+          </div>
+          <div class="form-row">
+              <div class="col">
+                <input type="text" formControlName="ContactNo" class="form-control" placeholder="validity">
+              </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label > Gender </label>
+          </div>
+          <div class="form-row">
+              <div class="col">
+                <input type="text" formControlName="gender" class="form-control" placeholder="gender">
+              </div>
+          </div>
+        </div>
+        <br>
+        <div class="form-row mt-4">
+          <div class="col-md-6">
+            <button type="button" class="btn btn-primary" (click)="addItem()">Add</button> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;    &nbsp; &nbsp;
+            <button type="button" class="btn btn-primary" (click)="reset()">reset</button>
+          </div>
+        </div>
+      </div>
     </div>
-
-</div>
-
+  </form>
