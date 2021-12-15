@@ -1,85 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
-import { RouterService } from '../services/router.service';
-import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
-
+import { FormGroup } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { RouterService } from '../services/router.service';
+import { FormControl } from '@angular/forms';
+import { ProductListService } from '../services/product-list.service';
+import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-addproduct',
   templateUrl: './addproduct.component.html',
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit {
-  formValue !: FormGroup;
-  products:Array<Product>=[];
-  taskData!:any;
-   constructor( private formbuilder:FormBuilder) { }
-   public minDate: Date = new Date ("12/12/2021");
-     public maxDate: Date = new Date ("1/1/2050");
-     public value: Date = new Date ("12/12/2021");
-   ngOnInit(): void {
-     this.formValue =this.formbuilder.group({
-       taskno:[''],
-       taskname:[''],
-       taskdescription:['']
-     })
-     this.getAllTask();
-   }
-    postTaskDetails()
-    {
-     this.products.taskno=this.formValue.value.taskno;
-      this.products.taskname=this.formValue.value.taskname;
-      this.products.taskdescription=this.formValue.value.taskdescription;
-    this.api.postTask(this.products)
-    .subscribe(res=>{
-      console.log(res);
-      alert("Employee added successfully")
-      let ref=document.getElementById("cancel")
-      ref?.click();
-      this.formValue.reset();
-      this.getAllTask();
-    },
-    err=>{
-      alert("something went wrong");
+ products:Array<Product>=[];
+forms:Array<Product>=[];
+
+
+
+  constructor(private rs:RouterService,private ps:ProductService){} 
+  ngOnInit(): void {
     
-    })
- 
-    }
-    getAllTask()
-    {
-      this.api.getTask()
-      .subscribe(res=>{
-        this.taskData=res;
- 
-      })
-    }
-    deleteTask(row:any){
-      this.api.DeleteTask(row.id)
-      .subscribe(res=>{
-        alert("Employee Deleted")
-        this.getAllTask();
-      })
-    }
-    onEdit(row:any)
-    {
-      this.taskModelObj.id=row.id
-      //this.taskModelObj.taskno=row.taskno;
-      this.formValue.controls['taskno'].setValue(row.taskNo)
-      this.formValue.controls['taskname'].setValue(row.taskname)
-      this.formValue.controls['taskdescription'].setValue(row.taskdescription)
-    }
-    updateTaskDetails()
-    {
-     this.taskModelObj.taskno=this.formValue.value.taskno;
-     this.taskModelObj.taskname=this.formValue.value.taskname;
-     this.taskModelObj.taskdescription=this.formValue.value.taskdescription;
-     this.api.updateTask(this.taskModelObj,this.taskModelObj.id)
-     .subscribe(res=>{
-       alert("Updated Successfully")
-       let ref=document.getElementById("cancel")
-      ref?.click();
-      this.formValue.reset();
-      this.getAllTask();
-     })
-    }
-   }
+  }
+  loginForm=new FormGroup({
+    name:new FormControl('',Validators.required),
+    discount:new FormControl('',Validators.required),
+    price:new FormControl('',Validators.required),
+    image:new FormControl('',Validators.required)
+    
+  });
+// forms:Array<Product>=this.loginForm.value;
+
+
+  Additem(){
+    //console.log(this.loginForm.value)
+    //console.log(JSON.stringify(this.loginForm.value))
+    this.forms.push(this.loginForm.value);
+    this.ps.addProduct(this.loginForm.value).subscribe(data => {} );
+    this.rs.routeToAdminProduct();
+    this.loginForm.reset();
+  }
+  }

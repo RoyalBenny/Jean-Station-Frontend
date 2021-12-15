@@ -1,82 +1,22 @@
-<!--<nav class="navbar navbar-light bg-primary">
-    <div class="container-fluid">
-        <h1>MyDayApplication</h1>-->
-        <div class="d-flex">
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Tasks</button>
-      </div>
-     
-  
+<form [formGroup] = "loginForm" (ngSubmit)="Additem()">
 
-<table class="table">
-  <thead>
-      <tr>
-          <th scope="col">ProductName</th>
-          <th scope="col">Price</th>
-          <th scope="col">Discount</th>
-          
-      </tr>
-  </thead>
-  <tbody>
-      <tr *ngFor="let row of products">
-         <td>{{row.name}}</td>
-         <td>{{row.price}}</td>
-         <td>{{row.discount}}</td>
-         <td>
-            
-             <button (click)="AddProduct(row)" class="btn btn-danger mx-3">Submit</button>
-
-         </td>
-      </tr>
-  </tbody>
-</table>
-
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Your Task</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-       
-          <form [formGroup]="formValue">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Date</label>
-              <input type="email" formControlName="taskno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text"></div>
-            
-            <div>
-              <ejs-calendar id=calendar [value]='value' [min]='minDate' [max]='maxDate' > </ejs-calendar >
-            </div>
-            </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Task No</label>
-                <input type="email" formControlName="taskno" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text"></div>
-              </div>
-              <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Task Name</label>
-                  <input type="email"  formControlName="taskname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text"></div>
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Add a note</label>
-                  <input type="email"  formControlName="taskdescription" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text"></div>
-                </div>
-              
-             
-            </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button"  (click)="postTaskDetails()" class="btn btn-primary">Add</button>
-        <button type="button"  (click)="updateTaskDetails()" class="btn btn-primary">Update</button>
-        <button type="button" class="btn btn-danger">Send</button>
-      </div>
-    </div>
+  <div class="form-control">
+      Product name <br><input type="text" formControlName="name"placeholder="enter product name" id="name">
   </div>
+  <div class="form-control">
+    
+    Discount <br> <input type="text" formControlName="discount"placeholder="enter discount" id="discount">
 </div>
+<div class="form-control">
+  <!-- Username<input type="text" [(ngModel)]="u.id"> -->
+  Price <br><input type="text" formControlName="price"placeholder="enter price" id="price">
+</div>
+  <div class="form-control">
+      <!-- Password<input type="text" [(ngModel)]="u.password"> -->
+     Image <br><input type="text" formControlName="image"placeholder="enter image url" id="imageUrl">
+  </div>
+  <div class="form-control">
+      <input type="submit" value="submit" id="btnsubmit">
+    <!-- <button (click)="loginHandler()">{{caption}}</button> -->
+  </div>
+</form>
