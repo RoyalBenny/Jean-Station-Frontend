@@ -8,9 +8,9 @@
   </div>
 <br>
 
-<ng-container *ngIf="products.length !=0">
+<ng-container *ngIf="cart.length !=0">
  <div class="card-table">
-<div *ngFor="let item of products;let i=index">
+<div *ngFor="let item of cart;let i=index">
 <div class="container">
  <div class="row">
    <div class="image col-12 col-md-4 d-flex justify-content-center">
@@ -34,9 +34,7 @@
 </div>
 </div>
 </ng-container>
-
 <br>
-
  <br>
  <!-- <div class="container">
    <div class="row">
@@ -62,7 +60,7 @@
 </div>
 </ng-container> -->
 
-<ng-container *ngIf="products.length==0">
+<ng-container *ngIf="cart.length==0">
  <div class="container">
    <div class="card">
       <div class="center">

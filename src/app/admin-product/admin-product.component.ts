@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterService } from '../services/router.service';
 import { Product } from '../models/product';
+import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-admin-product',
   templateUrl: './admin-product.component.html',
@@ -8,7 +9,10 @@ import { Product } from '../models/product';
 })
 export class AdminProductComponent implements OnInit {
   products:Array<Product>=[]
-  constructor(private rs:RouterService) { }
+  constructor(private rs:RouterService,private ps:ProductService) {
+    this.ps.getProducts().subscribe((data)=>{this.products=data;});
+    
+   }
 
   ngOnInit(): void {
   }

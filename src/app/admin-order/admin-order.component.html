@@ -91,7 +91,19 @@
                 <td><p>{{i.address}}</p></td>
                 <td><p>{{i.date}}</p></td>
                 <td><p>{{i.price}}</p></td>
-                <td><p>{{i.status}}</p></td>
+                <!-- <td><p>{{i.status}}</p></td> -->
+                <td>
+                  <!-- {{status[i.status]}} -->
+                  <br>
+                  <select name="cars" id="select" [(ngModel)]="i.status" >
+                    
+                    
+                    <option value="0" >Approved</option>
+                    <option value="1" >Delivered</option>
+                    <option value="2" >Shipped</option>
+                  </select>
+                  <br><br>
+              </td>
                 <td><p>{{i.imageUrl}}</p></td>
             </tr>
           </table>

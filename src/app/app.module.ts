@@ -19,6 +19,7 @@ import { AdminOfferComponent } from './admin-offer/admin-offer.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { AddoffersComponent } from './addoffers/addoffers.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule
 
   ],
   providers: [],
