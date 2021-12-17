@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductListService {
+  public cartItemList : any =[]
   products:Array<Product>=[];
 subject:BehaviorSubject<Array<Product>> =  new BehaviorSubject(this.products)
   constructor(private httpClient:HttpClient) {
@@ -19,6 +20,7 @@ subject:BehaviorSubject<Array<Product>> =  new BehaviorSubject(this.products)
    }
    getProducts():Observable<Array<Product>>
   {
+
     return this.subject;
   }
   // removeproduct(product:any){

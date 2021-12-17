@@ -23,6 +23,7 @@ export class AdminProductComponent implements OnInit {
   ngOnInit(): void {
   }
   Addproduct(){
+
    this.rs.routeToAddproduct();
   }
   orderclick(){
