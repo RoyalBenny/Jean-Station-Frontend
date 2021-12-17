@@ -58,4 +58,12 @@ export class RouterService {
    routeToAddoffer(){
      this.router.navigate(['/addoffers']);
    }
+   routeToAdminEdit(id:string){
+    this.router.navigate(['/admin-edit',id]);
+  }
+   routeToOrderDelivery(id:string){
+     this.router.navigate(['/order-delivery',id]);
+
+   }
+
 }

@@ -1,33 +1,49 @@
-<div class="container">
-    <div class="row d-flex justify-content-center" style="padding-top:3vh;">
-        <div class="col-12 col-md-5 col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <form class="addform p-1 d-flex flex-column justify-content-center">
-                        <div class="form-group p-1">
-                          <label for="addproduct" class="p-2">Product Name</label>
-                          <input type="string" class="form-control"  placeholder="Enter product name">
-                        </div>
-                        <div class="form-group p-1">
-                          <label for="price" class="p-2">Price</label>
-                          <input type="number" class="form-control"  placeholder="Enter price">
-                        </div>
-                        <div class="form-group p-1">
-                            <label for="discount" class="p-2">Discount</label>
-                            <input type="string" class="form-control"  placeholder="Enter discount">
-                          </div>
-                        <br>
-                        <button type="submit" class="btn btn-primary" (click)="Additem()" style="width: 100px; margin: auto;">Submit</button>
-                    </form>
-                </div>
-              </div>
-        </div>
-        <!-- <div class="row " style="padding-top:3vh;">
-            <button type="submit" class="btn btn-outline-secondary" style="width:max-content; margin: auto;" (click)="onSignUp()">Create an account</button>
-
-        </div> -->
-
-    </div>
-
+<form [formGroup] = "loginForm" (ngSubmit)="Additem()">
+  <div class="form-control">
+      Product name <br><input type="text" formControlName="name"placeholder="enter product name" id="name">
+  </div>
+  <div class="form-control">
+    <!-- Username<input type="text" [(ngModel)]="u.id"> -->
+    Price <br><input type="text" formControlName="price"placeholder="enter price" id="price">
+  </div>
+  <div class="form-control">
+    
+    Discount <br> <input type="text" formControlName="discount"placeholder="enter discount" id="discount">
 </div>
-
+<div class="form-control">
+  <!-- Password<input type="text" [(ngModel)]="u.password"> -->
+ quantity <br><input type="number" formControlName="quantity"placeholder="enter quantity" id="quantity">
+</div>
+<div class="form-control">
+  <img src="" alt="">
+  <!-- Password<input type="text" [(ngModel)]="u.password"> -->
+ Image <br><input type="text" src="imageUrl" formControlName="imageUrl"placeholder="enter image url" id="imageUrl"w-50 height="50%">
+</div>
+  <div class="form-control">
+     
+      Description <br><textarea type="text" formControlName="description"placeholder="enter description" id="description"></textarea> 
+    </div>
+      <div class="form-control">
+        Section 
+        <select name="section" id="select" formControlName="section" >            
+          <option value="0" >Men</option>
+          <option value="1" >Women</option>
+          <option value="2" >Boy</option>
+          <option value="3">Girl</option>
+        </select>
+      </div>
+      <div class="form-control">
+        Category 
+        <select name="category" id="select" formControlName="category" >            
+          <option value="0" >Pants</option>
+          <option value="1" >Shirt</option>
+          <option value="2" >Shoes</option>
+          <option value="3">Tshirt</option>
+          <option value="4">Blouses</option>
+        </select>    
+      </div>
+      <div class="form-control">
+          <input type="submit" value="submit" id="btnsubmit">
+        <!-- <button (click)="loginHandler()">{{caption}}</button> -->
+      </div>
+    </form>

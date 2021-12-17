@@ -1,0 +1,7 @@
+{
+    "/api/product": {
+        "target": "http://localhost:5000/api/product",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

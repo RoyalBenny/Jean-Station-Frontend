@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from '../models/order';
+import { Order, Status } from '../models/order';
+import { OrderService } from '../services/order.service';
 import { ProductDeliveryService } from '../services/product-delivery.service';
 @Component({
   selector: 'app-order-delivery',
@@ -7,10 +8,17 @@ import { ProductDeliveryService } from '../services/product-delivery.service';
   styleUrls: ['./order-delivery.component.css']
 })
 export class OrderDeliveryComponent implements OnInit {
-  products:Array<Order>=[]
-    constructor(private ps:ProductDeliveryService) { 
-      this.ps.getProducts().subscribe((data)=>{this.products = data;});
+  orders:Array<Order>=[]
+  delivStatus = Status;
+    constructor(private os:OrderService) { 
     }
     ngOnInit(): void {
+      this.os.getOrders().subscribe((data)=>{
+        this.orders = data;
+        console.log(this.orders);
+
+      }
+        );
+
     }
   }

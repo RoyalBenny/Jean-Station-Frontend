@@ -1,0 +1,74 @@
+<!-- <table class="table">
+<thead>
+    <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Quantity</th>
+        <th>Image</th>
+        <th>Action</th>
+    </tr>
+</thead>
+<tr *ngFor="let i of products">
+    <td><p>{{i.name}}</p></td>
+    <br><br>
+    <td><p>{{i.price}}</p></td>
+    <br><br>
+    <td><p>{{i.discount}}</p></td>
+    <br><br>
+    <td><p>{{i.quantity}}</p></td>
+    <br><br>
+    <td><p>{{i.imageUrl}}</p></td>
+    <br><br>
+    <td><p><button (click)="savechanges()" class="btn btn-primary">Save Changes</button>
+</tr> -->
+
+<form [formGroup] = "editForm" (ngSubmit)="editItem()">
+
+    <div class="form-control">
+        Product name <br><input type="text" formControlName="name"placeholder="enter product name" id="name">
+    </div>
+    <div class="form-control">
+      
+      Discount <br> <input type="text" formControlName="discount"placeholder="enter discount" id="discount">
+  </div>
+  <div class="form-control">
+    <!-- Username<input type="text" [(ngModel)]="u.id"> -->
+    Price <br><input type="text" formControlName="price"placeholder="enter price" id="price">
+  </div>
+    <div class="form-control">
+        <!-- Password<input type="text" [(ngModel)]="u.password"> -->
+       Image <br><input type="text" formControlName="imageUrl"placeholder="enter image url" id="imageUrl">
+    </div>
+    <div class="form-control">
+      <!-- Password<input type="text" [(ngModel)]="u.password"> -->
+     Quantity <br><input type="text" formControlName="quantity"placeholder="enter quantity" id="quantity">
+  </div>
+    <div class="form-control">
+      <!-- Password<input type="text" [(ngModel)]="u.password"> -->
+      Description <br><textarea type="text" formControlName="description"placeholder="enter description" id="description"></textarea> 
+  </div>
+    <div class="form-control">
+      Section 
+      <select name="section" id="select" formControlName="section" >            
+        <option value="0" >Men</option>
+        <option value="1" >Women</option>
+        <option value="2" >Boy</option>
+        <option value="3">Girl</option>
+      </select>
+    </div>
+    <div class="form-control">
+      Category 
+      <select name="category" id="select" formControlName="category" >            
+        <option value="0" >Pants</option>
+        <option value="1" >Shirt</option>
+        <option value="2" >Shoes</option>
+        <option value="3">Tshirt</option>
+        <option value="4">Blouses</option>
+      </select>    
+    </div>
+    <div class="form-control">
+        <input type="submit" value="submit" id="btnsubmit">
+      <!-- <button (click)="loginHandler()">{{caption}}</button> -->
+    </div>
+  </form>

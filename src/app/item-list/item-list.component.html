@@ -1,13 +1,15 @@
+<app-header></app-header>
 <div class="heading" style="color:white; background-color: orangered;height:70px">
     <h1>{{category}}</h1>
 </div>
+<br>
 <div class="container item-list">
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Sort
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">fff</a>
       <a class="dropdown-item" href="#">Another action</a>
       <a class="dropdown-item" href="#">Something else here</a>
     </div>
@@ -21,15 +23,32 @@
       </div>
   
       </div>
+      <br>
 <div class="row">
+
        <ng-container *ngFor="let i of products">
-           <div class="card col-md-4 col-lg-3"(click)="onItem('1')" style="margin: 3px;">
+           <!-- <div class="card col-md-4 col-lg-3"(click)="onItem(i.id)" style="margin: 3px;">
                <img src="{{i.imageUrl}}">
                <p><strong>{{i.name}}</strong></p>
-               <p><strong>{{i.price}}</strong></p>
-               <p><strong>{{i.discount}}</strong></p>
+               <p><strong>${{i.price}}</strong></p>
+               <p><strong>Discount: {{i.discount}}%</strong></p>
                <button (click)="addToCart(i)" class="btn btn-info" style="width: max-content; margin: auto;">Add To Cart</button>
                <br>
-           </div>
+           </div> -->
+           <div class="card" style="width: 18rem;">
+           <div  (click)="onItem(i.id)">
+            <img src="{{i.imageUrl}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{i.name | titlecase}}</h5>
+              <p class="card-text" style="color: green;">{{i.price | currency: 'INR':true}}</p>
+              <p class="card-text" style="color: grey;">Discount: {{i.discount}}</p>
+            </div>
+          </div>
+          <a  class="btn btn-primary" (click)="addToCart(i)">Add to cart</a>
+          <br>
+          </div>
        </ng-container>
 </div>
+<br>
+</div>
+<app-footer></app-footer>

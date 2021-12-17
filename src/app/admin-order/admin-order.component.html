@@ -76,35 +76,32 @@
           </ul> -->
           <table>
             <tr>
-                <th>Id</th>
+                <th>User Id</th>
                 <th>Product Id</th>
                 <th>Address</th>
                 <th>Date</th>
                 <th>Price</th>
                 <th>Status</th>
-                <th>Image</th>
 
             </tr>
-            <tr *ngFor="let i of orders">
-                <td><p>{{i.id}}</p></td>
+            <tr *ngFor="let i of orders" style="margin-top: 10px;">
+                <td><p>{{i.userId}}</p></td>
                 <td><p>{{i.productId}}</p></td>
                 <td><p>{{i.address}}</p></td>
-                <td><p>{{i.date}}</p></td>
+                <td><p>{{i.date | date: 'medium'}}</p></td>
                 <td><p>{{i.price}}</p></td>
-                <!-- <td><p>{{i.status}}</p></td> -->
                 <td>
-                  <!-- {{status[i.status]}} -->
-                  <br>
-                  <select name="cars" id="select" [(ngModel)]="i.status" >
-                    
-                    
-                    <option value="0" >Approved</option>
-                    <option value="1" >Delivered</option>
-                    <option value="2" >Shipped</option>
-                  </select>
-                  <br><br>
-              </td>
-                <td><p>{{i.imageUrl}}</p></td>
+                  <div style="display: inline;">
+                    <select name="section" id="color" class="form-control" [(ngModel)] = "i.status" style="width: 100px;">            
+                      <option value="0" >Approved</option>
+                      <option value="1" >Delivered</option>
+                      <option value="2" >Shipped</option>
+                    </select>
+                    <button type="button" class="btn btn-outline-info" (click)="onUpdate(i)">Update Status</button>
+                  </div>
+
+                </td>
+                
             </tr>
           </table>
           </div>

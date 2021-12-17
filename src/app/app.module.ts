@@ -19,7 +19,9 @@ import { AdminOfferComponent } from './admin-offer/admin-offer.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { AddoffersComponent } from './addoffers/addoffers.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminEditComponent } from './admin-edit/admin-edit.component';
 
 
 const appRoutes: Routes = [
@@ -36,7 +38,9 @@ const appRoutes: Routes = [
   {path:'addproduct',component:AddproductComponent},
   {path:'admin-order',component:AdminOrderComponent},
   {path:'admin-offer',component:AdminOfferComponent},
-  {path:'addoffers',component:AddoffersComponent}
+  {path:'addoffers',component:AddoffersComponent},
+  {path:'admin-login',component:AdminLoginComponent},
+  {path:'admin-edit/:id',component:AdminEditComponent}
 ];
 
 
@@ -58,13 +62,17 @@ const appRoutes: Routes = [
     AdminOfferComponent,
     AddproductComponent,
     AddoffersComponent,
+    AdminLoginComponent,
+    AdminEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
     FormsModule
+
 
   ],
   providers: [],

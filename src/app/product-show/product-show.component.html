@@ -1,21 +1,23 @@
-
+<app-header></app-header>
 <div class="container">
-  <div class="head">
-  <h1>Item</h1>
-   </div>
-
- <div class="product-show"> 
-  <ng-container *ngFor="let i of products">
-    <img src="{{i.imageUrl}}"alt="">
-    <div class="Detail">
-      <p><strong>Name</strong>    {{i.name}}</p>
-      <p><strong>Price</strong>   {{i.price}}</p>
-      <p><strong>Offer</strong>   {{i.discount}}</p>
-      <p><strong>Description</strong>{{i.description}}</p>
+  
+ <div class="row"> 
+  <!-- <ng-container *ngFor="let i of products"> -->
+    <div class ="col-12 col-md-5 col-lg-6">
+    <img src="{{product.imageUrl}}"alt="">
+  </div>
+    <div class="col-12 col-md-5 col-lg-6" style="margin-top: 10px;">
+      
+      <p><strong>Name</strong>    {{product.name}}</p>
+      <p><strong>Price</strong>   {{product.price}}</p>
+      <p><strong>Offer</strong>   {{product.discount}}</p>
+      <p><strong>Description</strong>{{product.description}}</p>
+      <button type="button" class="btn btn-danger"(click)="AddToCart(product)" style="margin-right: 10px;">ADD TO CART</button>
+    <button type="button" class="btn btn-success" (click)="onBuy(product)">BUY NOW</button> 
     </div>
-  </ng-container>
-    <button type="button" class="btn btn-danger"(click)="AddToCart">ADD TO CART</button>
-    <button type="button" class="btn btn-success" (click)="onBuy('1')">BUY NOW</button> 
+  <!-- </ng-container> -->
+    
     
   </div>
 </div>
+<app-footer></app-footer>

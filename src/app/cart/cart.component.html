@@ -1,16 +1,19 @@
-<div class="container">
+<app-header></app-header>
+<h1 style="margin: auto;">
+  My Cart
+</h1>
+<!-- <div class="container">
   <div class="row">
       <div class="col-12 col-md-4">
-        <!-- <button>Back</button> -->
         <h1 class="d-flex justify-content-center">MY CART</h1>
       </div>
    </div>
   </div>
 <br>
 
-<ng-container *ngIf="cart.length !=0">
+<ng-container *ngIf="cartItems.length !=0">
  <div class="card-table">
-<div *ngFor="let item of cart;let i=index">
+<div *ngFor="let item of cartItems;let i=index">
 <div class="container">
  <div class="row">
    <div class="image col-12 col-md-4 d-flex justify-content-center">
@@ -22,10 +25,8 @@
     <div class="product-price">{{item.price}}</div>
       <div class="quantity">Quantity:</div>
     <input type="number" value="{item.quantity}}" min="1">
-    <div class="product-totprice">Total:</div>
-    <div class="product-totprice">{{item.totals}}</div>
       <div><button (click)="RemoveItem(item)" class=" btn btn-danger">Remove</button></div>
-       <div><button class=" btn btn-warning" (click)="onBuy('1')">Place Order</button></div>
+       <div><button class=" btn btn-warning" (click)="onBuy(item.id)">Place Order</button></div>
       <br>
    </div>
  </div>
@@ -34,8 +35,10 @@
 </div>
 </div>
 </ng-container>
+
 <br>
- <br>
+
+ <br> -->
  <!-- <div class="container">
    <div class="row">
      <div class="col-12 col-md-10 d-flex justify-content-center">
@@ -60,7 +63,7 @@
 </div>
 </ng-container> -->
 
-<ng-container *ngIf="cart.length==0">
+<!-- <ng-container *ngIf="cartItems.length==0">
  <div class="container">
    <div class="card">
       <div class="center">
@@ -68,4 +71,35 @@
        </div>
      </div>
    </div>
- </ng-container>
+ </ng-container> -->
+
+
+ <div class="cart col-11 col-md-10 col-lg-8" style="margin: auto;">
+  <div id="card-style" class="card mb-3" style="max-width: 100%;" *ngFor="let i of cartItems">
+      <div class="row g-0">
+        <div class="col-md-4">
+            <div class="container">
+              <img id="img-cart" class="img-fluid" src="{{i.imageUrl}}" class="img-fluid rounded-start" alt="...">
+            </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-text">{{i.name}}</h5>
+            <p class="card-title">Price:-{{i.price}}</p>
+            <p class="card-text">Offer: {{i.discount}}%</p>
+            <!-- <p class="card-text">{{i.date}}</p> -->
+            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+          </div>
+
+          <a  (click)="onBuy(i) "class="btn btn-primary" style="margin-right: 10px;">Place Order</a>
+          <a  (click)="RemoveItem(i) "class="btn btn-danger">Remove</a>
+
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+<app-footer></app-footer>

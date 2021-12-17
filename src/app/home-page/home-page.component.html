@@ -1,5 +1,5 @@
 
-
+<app-header></app-header>
 <div class="container-style">
     <div id="carouselExampleControls" class="carousel slide hero-unit" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -25,18 +25,18 @@
 
     <div class="colContainer" style="padding-top: 150px;">
         <h3>  Today's Deal</h3>
-      <div class="card col " *ngFor="let i of n">
-        <img class="card-img-top item-img" src="../../assets/img/jens.jpg" alt="Card image cap" >
+      <div class="card col " *ngFor="let i of products">
+        <img class="card-img-top item-img" src="{{i.imageUrl}}" alt="Card image cap" >
         <div class="card-body">
-          <h5 class="card-title" style="color: black;">Black Jeans</h5>
-          <p class="card-text" style="color: rgb(29, 28, 28);" >Slim fit black jeans</p>
-          <div style="display: flex;justify-content: space-around;">
-            <p class="card-text" style="color: red;">$250 </p>
-            <p class="card-text" style="color: green;">Offer 12%</p>
+          <h5 class="card-title" style="color: black;">{{i.name| titlecase}}</h5>
+          <div style="display: flex;justify-content: space-around; ;">
+            <p class="card-text" style="color: red; margin-right: 5px;" > {{i.price | currency: 'INR':true}}</p>
+            <p class="card-text" style="color: green;">Offer {{i.discount}}%</p>
           </div>
-
+          <a  class="btn btn-primary" (click)="addToCart(i)">Add to cart</a>
         </div>
       </div>
     </div>
 
 </div>
+<app-footer></app-footer>

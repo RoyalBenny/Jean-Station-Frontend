@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/product';
+import { CartService } from '../services/cart.service';
+import { ProductService } from '../services/product.service';
+import { RouterService } from '../services/router.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
-  n:Array<number> = [1,2,3,4,];
+  constructor(private ps: ProductService, private rs: RouterService, private cs: CartService) { }
+  products: Array<Product> = [];
   ngOnInit(): void {
+
+    this.ps.getProducts().subscribe((data) => {
+      this.products = data.slice(0, 6);
+      console.log(this.products);
+    });
+
+  }
+
+  addToCart(p: Product) {
+    this.cs.addToCart(p).subscribe
+      (res => {
+        console.log(res);
+        this.rs.routeToCart();
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
 }

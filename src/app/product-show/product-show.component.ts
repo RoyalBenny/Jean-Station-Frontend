@@ -13,22 +13,33 @@ import { CartService } from '../services/cart.service';
 })
 export class ProductShowComponent implements OnInit {
 
-products:Array<Product>=[];
+product:Product;
   constructor(private ps:ProductService,private ar: ActivatedRoute,private rs: RouterService,private cs:CartService) {
-    this.ps.getProducts().subscribe((data)=>{this.products=data;});
+    var id = this.ar.snapshot.params.id;
+    //this.ps.getProducts().subscribe((data)=>{this.products=data;});
+    this.product = this.ps.getProduct(id);
   }
    
   ngOnInit(): void {
     console.log(this.ar.snapshot.params.id);
+    
   }
 
-  onBuy(id:string){
-    
-    console.log(id);
-    this.rs.routeToBuy(id);
+  onBuy(p: Product){
+    console.log(p);
+    this.rs.routeToBuy(p.id);
   }
-  AddToCart(i:any)
+  AddToCart(i:Product)
   {
-    this.cs.addtoCart(i);
+    this.cs.addToCart(i).subscribe
+    (res=>{
+      console.log(res);
+      this.rs.routeToCart();
+    },
+    err=>{
+      console.log(err);
+    }
+    );
+    //this.cs.addToCart(i);
   }
 }

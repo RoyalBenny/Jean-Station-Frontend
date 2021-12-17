@@ -10,7 +10,7 @@ export class ProductListService {
   products:Array<Product>=[];
 subject:BehaviorSubject<Array<Product>> =  new BehaviorSubject(this.products)
   constructor(private httpClient:HttpClient) {
-    this.httpClient.get<Array<Product>>("http://localhost:3000/shopping")
+    this.httpClient.get<Array<Product>>("http://localhost:5003/shopping")
      .subscribe(
        (data)=>{
          this.products = data;  
@@ -21,4 +21,11 @@ subject:BehaviorSubject<Array<Product>> =  new BehaviorSubject(this.products)
   {
     return this.subject;
   }
+  // removeproduct(product:any){
+  //   this.products.map((a:any,index:any)=>{
+  //     if(product.id==a.id){
+  //       this.products.splice(index,1);
+  //     }
+  //   })
+  // }
 }

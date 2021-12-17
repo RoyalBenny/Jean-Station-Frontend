@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="container" style="margin-bottom: 50px;">
     <br>
     
@@ -6,19 +7,42 @@
             <h4 class="d-flex justify-content-center">
                 Delivery Address 
             </h4>
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                <label for="floatingTextarea2">Enter delivery address</label>
-              </div>
-              <br>
-              <button type="button" class="btn btn-outline-warning" >Place Order</button>
+            <div [formGroup]="buyForm" (ngSubmit)="onOrder()">
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" formControlName="address"></textarea>
+                    <label for="floatingTextarea2" >Enter delivery address</label>
+                </div>
+                <div class="form-control">
+                    Size 
+                    <select name="section" id="size" formControlName="size" >            
+                      <option value="0" >Small</option>
+                      <option value="1" >Medium</option>
+                      <option value="2" >Large</option>
+                    </select>
+                  </div>
+                  <div class="form-control">
+                    Color 
+                    <select name="section" id="color" formControlName="color" >            
+                      <option value="0" >Red</option>
+                      <option value="1" >Green</option>
+                      <option value="2" >Blue</option>
+                      <option value="2" >Black</option>
+
+                    </select>
+                  </div>
+                  <br>
+                  <button type="button" class="btn btn-outline-warning" (click)="onOrder()">Place Order</button>
+                  <!-- <button type="submit" value="submit" class="btn btn-outline-warning" ()>Place Order</button> -->
+
+            </div>
+            
         </div>
 
         <div class = "col-12 col-md-4 col-lg-5">
             <div class="card" style="width: 18rem; margin-top: 35px;">
                 <div class="card-body">
                   <h5 class="card-title">Price Details</h5>
-                  <p class="card-text">Price $450</p>
+                  <p class="card-text"> {{price}}</p>
                     <p class="card-text">Shipping Fee  $50</p>
                   
                 </div>
@@ -30,3 +54,4 @@
 
 
 </div>
+<app-footer></app-footer>
