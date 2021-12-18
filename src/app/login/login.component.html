@@ -9,14 +9,14 @@
         <div class="col-12 col-md-5 col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    <form class="p-1 d-flex flex-column justify-content-center">
+                    <form class="p-1 d-flex flex-column justify-content-center" [formGroup]="loginForm" (ngSubmit)="onLogin()">
                         <div class="form-group p-1">
                           <label for="exampleInputEmail1" class="p-2">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                         </div>
                         <div class="form-group p-1">
                           <label for="exampleInputPassword1" class="p-2">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                         </div>
                         <br>
                         <button type="submit" class="btn btn-primary" style="width: 100px; margin: auto;">Log In</button>

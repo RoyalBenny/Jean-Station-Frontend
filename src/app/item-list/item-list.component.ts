@@ -5,6 +5,8 @@ import { ProductListService } from '../services/product-list.service';
 import { ActivatedRoute } from '@angular/router';
 import { RouterService } from '../services/router.service';
 import { ProductService } from '../services/product.service';
+import { BehaviorSubject } from 'rxjs';
+import { CommonService } from '../services/common.service';
 
 @Component({
   selector: 'app-item-list',
@@ -15,26 +17,61 @@ export class ItemListComponent implements OnInit {
 
 products:Array<Product>=[]
 categoryDict  = new Map<string,number>();
+
 sectionDict = new Map<string,number>();
-  constructor(private ps:ProductService,private cs:CartService,private as: ActivatedRoute, private rs: RouterService) { 
+category: string ='';
+  constructor(private ps:ProductService,private cs:CartService,private as: ActivatedRoute, private rs: RouterService
+    ,commonService:CommonService) { 
     this.setCategoryDict();
     this.setSectionDict();
     //console.log(this.as.snapshot.paramMap.get('value'));
-    let value = this.as.snapshot.paramMap.get('value')?.split(" ") as Array<string>;
-
-    ps.getProducts().subscribe(
-      (data)=>{
-        //this.products = data.fil;
-        if(value?.length==2){
-          this.products = data.filter(x=> x.category == this.categoryDict.get(value[1])  && x.section == this.sectionDict.get(value[0]));
+    //let value = this.as.snapshot.paramMap.get('value')?.split(" ") as Array<string>;
+    // let value = localStorage.getItem('cat')?.split(" ") as Array<string>;
+    // let subject = new BehaviorSubject(value);
+    // subject.next(value);
+    // subject.subscribe(value => {
+    //   console.log(value);
+    // });
+    commonService.getCategory().subscribe(v => {
+      console.log(v);
+      this.category = v!=null?v.toUpperCase():'';
+      console.log(v);
+      let value = v?.split(" ") as Array<string>;
+      console.log(value);
+      ps.getProducts().subscribe(
+        (data)=>{
+          //this.products = data.fil;
+          if(value?.length==2){
+            this.products = data.filter(x=> x.category == this.categoryDict.get(value[1])  && x.section == this.sectionDict.get(value[0]));
+          }
+        },
+        (error)=>{
+          console.log(error);
         }
-      },
-      (error)=>{
-        console.log(error);
-      }
-    );
+      );
+
+    });
+    let subject = new BehaviorSubject(localStorage.getItem('cat'));
+    subject.subscribe(v => {
+      // this.category = v!=null?v.toUpperCase():'';
+      // console.log(v);
+      // let value = v?.split(" ") as Array<string>;
+      // console.log(value);
+      // ps.getProducts().subscribe(
+      //   (data)=>{
+      //     //this.products = data.fil;
+      //     if(value?.length==2){
+      //       this.products = data.filter(x=> x.category == this.categoryDict.get(value[1])  && x.section == this.sectionDict.get(value[0]));
+      //     }
+      //   },
+      //   (error)=>{
+      //     console.log(error);
+      //   }
+      // );
+
+    });
+    
   }
-  category: string ='';
   
   ngOnInit(): void {
       var value = this.as.snapshot.paramMap.get('value');

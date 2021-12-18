@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonService } from '../services/common.service';
 import { RouterService } from '../services/router.service';
 
 @Component({
@@ -8,8 +9,10 @@ import { RouterService } from '../services/router.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private rs:RouterService) { }
+  
+  isLoggedIn = localStorage.getItem("logged")=="yes"?true:false;
+  constructor(private rs:RouterService, private cs: CommonService) {
+   }
 
   ngOnInit(): void {
   }
@@ -31,8 +34,15 @@ export class HeaderComponent implements OnInit {
   }
 
   onDropdown(cat:string,subCat:string){
-
+    this.cs.setCategory(cat+" "+subCat);
+    localStorage.setItem('cat',cat+' '+subCat);
     this.rs.routeToItemList(cat+' '+subCat);
+  }
+
+  onLogout(){
+    localStorage.setItem('logged','no');
+    this.isLoggedIn = false;
+   // this.rs.routeToHome();
   }
 
 }

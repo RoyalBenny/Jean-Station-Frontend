@@ -23,7 +23,6 @@ export class AdminProductComponent implements OnInit {
   ngOnInit(): void {
   }
   Addproduct(){
-
    this.rs.routeToAddproduct();
   }
   orderclick(){
@@ -36,6 +35,7 @@ export class AdminProductComponent implements OnInit {
     this.rs.routeToAdminProduct();
   }
   editclick(id:string){
+    console.log(id);
     this.rs.routeToAdminEdit(id);
   }
   deleteclick(product:Product){

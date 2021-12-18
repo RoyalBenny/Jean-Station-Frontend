@@ -9,26 +9,26 @@
         <div class="col-12 col-md-5 col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    <form class="p-1 d-flex flex-column justify-content-center">
+                    <form class="p-1 d-flex flex-column justify-content-center" [formGroup]="signUpForm" (ngSubmit)="signUp()">
                         <div class="form-group p-1">
                             <label for="exampleInputEmail1" class="p-2">Name</label>
-                            <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter Name">
+                            <input type="text" class="form-control" formControlName="username" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter Name">
                           </div>
                         <div class="form-group p-1">
                           <label for="exampleInputEmail1" class="p-2">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                         </div>
                         <div class="form-group p-1">
                           <label for="exampleInputPassword1" class="p-2">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" placeholder="Password">
                         </div>
                         <div class="form-group p-1">
                             <label for="exampleInputPassword2" class="p-2">Retype Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                            <input type="password" class="form-control" formControlName="password"id="exampleInputPassword2" placeholder="Password">
                           </div>
                           <div class="form-check p-1">
-                            <input type="checkbox" class="form-check-input" id="retailCheck">
-                            <label class="form-check-label" for="retailCheck">I am a Retailer</label>
+                            <input type="checkbox" class="form-check-input" id="retailCheck" formControlName="role">
+                            <label class="form-check-label"  for="retailCheck">I am a Retailer</label>
                           </div>
                         <br>
 

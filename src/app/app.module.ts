@@ -22,6 +22,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
+import { CartService } from './services/cart.service';
+import { ProductService } from './services/product.service';
+import { RouterService } from './services/router.service';
+import { OrderService } from './services/order.service';
+import { ActivateGuard } from './guards/activate.guard';
+import { UserService } from './services/user.service';
+import { CommonService } from './services/common.service';
 
 
 const appRoutes: Routes = [
@@ -34,7 +41,7 @@ const appRoutes: Routes = [
   { path: 'product-show/:id', component: ProductShowComponent },
   { path: 'cart', component: CartComponent },
   { path: 'buy-page/:id', component: BuyPageComponent },
-  {path:'admin-product',component:AdminProductComponent},
+  {path:'admin-product',component:AdminProductComponent, canActivate:[ActivateGuard]},
   {path:'addproduct',component:AddproductComponent},
   {path:'admin-order',component:AdminOrderComponent},
   {path:'admin-offer',component:AdminOfferComponent},
@@ -73,8 +80,17 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FormsModule
 
+
   ],
-  providers: [],
+  providers: [
+    CartService,
+    ProductService,
+    RouterService,
+    OrderService,
+    ActivateGuard,
+    UserService,
+    CommonService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

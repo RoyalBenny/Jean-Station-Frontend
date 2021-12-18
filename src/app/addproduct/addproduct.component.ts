@@ -38,9 +38,9 @@ export class AddproductComponent implements OnInit {
     // this.ps.addProduct(JSON.stringify(forms))
     
     this.forms.push(this.loginForm.value);
-    this.ps.addProduct(this.loginForm.value).subscribe(data => {} );
-    this.rs.routeToAdminProduct();
-    this.loginForm.reset();
+    // this.ps.addProduct(this.loginForm.value).subscribe(data => {} );
+    // this.rs.routeToAdminProduct();
+    // this.loginForm.reset();
 
     console.log("form"+JSON.stringify(this.forms));
     var product = this.loginForm.value as Product;

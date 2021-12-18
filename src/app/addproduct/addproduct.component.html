@@ -1,39 +1,50 @@
-<form [formGroup] = "loginForm" (ngSubmit)="Additem()">
+<br><br>
+<div class="container">
+  <!-- <div class="card"> -->
+  <form [formGroup] = "loginForm" (ngSubmit)="Additem()">
   <div class="form-control">
-      Product name <br><input type="text" formControlName="name"placeholder="enter product name" id="name">
-  </div>
-  <div class="form-control">
+    <div class="col-lg-4 col-lg offset-4">
+      Product name <br><input type="text" formControlName="name"placeholder="enter product name" id="name"style="align-items-center">
+  <!-- </div>
+  <div class="form-control"> -->
     <!-- Username<input type="text" [(ngModel)]="u.id"> -->
+    <br>
     Price <br><input type="text" formControlName="price"placeholder="enter price" id="price">
-  </div>
-  <div class="form-control">
+  <!-- </div>
+  <div class="form-control"> -->
+    <br>
     
     Discount <br> <input type="text" formControlName="discount"placeholder="enter discount" id="discount">
-</div>
-<div class="form-control">
+<!-- </div>
+<div class="form-control"> -->
   <!-- Password<input type="text" [(ngModel)]="u.password"> -->
- quantity <br><input type="number" formControlName="quantity"placeholder="enter quantity" id="quantity">
-</div>
-<div class="form-control">
+  <br>
+ Quantity <br><input type="number" formControlName="quantity"placeholder="enter quantity" id="quantity">
+<!-- </div>
+<div class="form-control"> -->
+  <br>
   <img src="" alt="">
   <!-- Password<input type="text" [(ngModel)]="u.password"> -->
  Image <br><input type="text" src="imageUrl" formControlName="imageUrl"placeholder="enter image url" id="imageUrl"w-50 height="50%">
-</div>
-  <div class="form-control">
-     
+<!-- </div>
+  <div class="form-control"> -->
+    <br>
       Description <br><textarea type="text" formControlName="description"placeholder="enter description" id="description"></textarea> 
-    </div>
-      <div class="form-control">
-        Section 
+    <!-- </div>
+      <div class="form-control"> -->
+        <br>
+        Section  &nbsp; &nbsp;
         <select name="section" id="select" formControlName="section" >            
           <option value="0" >Men</option>
           <option value="1" >Women</option>
           <option value="2" >Boy</option>
           <option value="3">Girl</option>
         </select>
-      </div>
-      <div class="form-control">
-        Category 
+      <!-- </div>
+      <div class="form-control"> -->
+        <br>
+        <br>
+        Category &nbsp;
         <select name="category" id="select" formControlName="category" >            
           <option value="0" >Pants</option>
           <option value="1" >Shirt</option>
@@ -41,9 +52,15 @@
           <option value="3">Tshirt</option>
           <option value="4">Blouses</option>
         </select>    
-      </div>
-      <div class="form-control">
-          <input type="submit" value="submit" id="btnsubmit">
+      <!-- </div>
+      <div class="form-control"> -->
+        <br><br>
+          <input type="submit" value="submit" id="btnsubmit"align-items-center>
         <!-- <button (click)="loginHandler()">{{caption}}</button> -->
       </div>
+      </div>
     </form>
+  <!-- </div> -->
+</div>
+
+  
