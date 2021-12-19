@@ -23,10 +23,15 @@ export class HomePageComponent implements OnInit {
   }
 
   addToCart(p: Product) {
+    if(localStorage.getItem('logged') == 'no'){ 
+      this.rs.routeToLogin();
+      return;
+    }
     this.cs.addToCart(p).subscribe
       (res => {
         console.log(res);
-        this.rs.routeToCart();
+        alert("Added to cart");
+        //this.rs.routeToCart();
       },
       err => {
         console.log(err);

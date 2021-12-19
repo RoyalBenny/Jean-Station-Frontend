@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Cart } from '../models/cart';
 import { Product } from '../models/product';
+import { User } from '../models/user';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,21 +20,33 @@ export class CartService {
     //     this.cartItemList=data;
     //   }
     // );
-
-    httpClient.get<Array<Cart>>(this.url).subscribe(
-      (data)=>{
-        this.cartItemList=data;
-        this.subject.next(this.cartItemList);
-      },
-      (error)=>{
-        console.log(error);
-      }
-    );
+    // var user = new User('','','','',1);
+    // user.id = localStorage.getItem('userId') as string;
+    // httpClient.post<Array<Cart>>(this.url+"/usercart",user).subscribe(
+    //   (data)=>{
+    //     this.cartItemList=data;
+    //     this.subject.next(this.cartItemList);
+    //   },
+    //   (error)=>{
+    //     console.log(error);
+    //   }
+    // );
     
   }
   getCartItems():BehaviorSubject<Array<Cart>>{
     return this.subject;
     // return this.httpClient.get<any>("http://localhost:3000/shopping")
+  }
+
+  getCartByUserId(){
+    var user = new User('','','','',1);
+    user.id = localStorage.getItem('userId') as string;
+     this.httpClient.post<Array<Cart>>(this.url+"/usercart",user).subscribe(
+      (data)=>{
+        this.cartItemList=data;
+        this.subject.next(this.cartItemList);
+      }
+    );
   }
 
   setProduct(product : any){
@@ -47,7 +60,8 @@ export class CartService {
   //   console.log(this.cartItemList)
   // }
   addToCart(product:Product):Observable<Cart>{
-    let cart = new Cart('','1',
+    var userId = localStorage.getItem('userId') as string;
+    let cart = new Cart('',userId,
     product.id,product.name,product.price,product.category,product.imageUrl,product.description,product.quantity,
     product.discount,product.section,product.status);
     return this.httpClient.post<Cart>(this.url,cart);

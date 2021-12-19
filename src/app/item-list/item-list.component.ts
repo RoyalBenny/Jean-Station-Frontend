@@ -90,10 +90,15 @@ category: string ='';
   }
   addToCart(i:Product)
   {
+    if(localStorage.getItem('logged') == 'no'){ 
+      this.rs.routeToLogin();
+      return;
+    }
     this.cs.addToCart(i).subscribe(
       (data)=>{
         console.log(data);
-        this.rs.routeToCart();
+        alert("Added to cart");
+        //this.rs.routeToCart();
 
       }
     )

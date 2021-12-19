@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
           console.log(data);
           localStorage.setItem('logged','yes');
           localStorage.setItem('role',parseInt(data.role.toString()).toString());
+          localStorage.setItem('userId',data.id);
           this.rs.routeToHome();
         }
       }

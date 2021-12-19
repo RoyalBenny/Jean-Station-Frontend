@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Order } from '../models/order';
 import { Product } from '../models/product';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -31,13 +32,20 @@ export class OrderService {
     return this.subject;
   }
 
+  getOrderByUserId():Observable<Array<Order>>{
+    var userId = localStorage.getItem('userId') as string;
+    let user = new User('','','','',1);
+    user.id = userId;
+    return this.httpClient.post<Array<Order>>(this.url+'/userorder',user);
+  }
+
   addOrder(order:Order):Observable<Order>{
     // let order = new Order('','1',
     // product.id,product.name,product.price,product.category,product.imageUrl,product.description,product.quantity,
     // product.discount,product.section,product.status);
     order.color = parseInt(order.color.toString());
     order.size = parseInt(order.size.toString());
-
+    order.userId = localStorage.getItem('userId') as string;
     console.log(order);
     this.orders.push(order);
     this.subject.next(this.orders);

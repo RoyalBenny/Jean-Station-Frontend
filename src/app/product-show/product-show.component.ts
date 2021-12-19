@@ -26,15 +26,21 @@ product:Product;
   }
 
   onBuy(p: Product){
+    if(localStorage.getItem('logged') == 'no') this.rs.routeToLogin();
     console.log(p);
     this.rs.routeToBuy(p.id);
   }
   AddToCart(i:Product)
   {
+    if(localStorage.getItem('logged') == 'no'){ 
+      this.rs.routeToLogin();
+      return;
+    }
     this.cs.addToCart(i).subscribe
     (res=>{
       console.log(res);
-      this.rs.routeToCart();
+      alert("Added to cart");
+      //this.rs.routeToCart();
     },
     err=>{
       console.log(err);

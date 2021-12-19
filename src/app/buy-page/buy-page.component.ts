@@ -49,7 +49,7 @@ export class BuyPageComponent implements OnInit {
   onOrder(){
     console.log(JSON.stringify(this.buyForm.value));
     this.order.userId = '1';
-    this.order.productId = this.product.id;
+    this.order.productID = this.product.id;
     this.order.address = this.buyForm.value.address;
     this.order.price = this.price;
     this.order.date = new Date();

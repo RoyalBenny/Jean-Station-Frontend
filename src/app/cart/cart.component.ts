@@ -17,6 +17,7 @@ export class CartComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.cartservice.getCartByUserId();
    this.cartservice.getCartItems().subscribe(res=>{
      this.cartItems=res;
     //  res.forEach(element => {

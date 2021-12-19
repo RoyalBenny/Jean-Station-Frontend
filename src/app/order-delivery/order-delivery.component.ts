@@ -13,7 +13,7 @@ export class OrderDeliveryComponent implements OnInit {
     constructor(private os:OrderService) { 
     }
     ngOnInit(): void {
-      this.os.getOrders().subscribe((data)=>{
+      this.os.getOrderByUserId().subscribe((data)=>{
         this.orders = data;
         console.log(this.orders);
 
